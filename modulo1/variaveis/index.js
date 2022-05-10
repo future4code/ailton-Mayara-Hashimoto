@@ -55,7 +55,15 @@ console.log(typeof idade)
 // let no = (prompt ("você é uma pessoa diurna?"))
 // console.log 
 
-// Exercício 3
+// Exercício 3 
+
+// let a = 5
+// let b = 10
+// console.log("O novo valor de a é", b) 
+// console.log("O novo valor de b é", a) 
+// Neste caso os valores ficam invertidos. A passa a ser 10 e B passa a ser 5
+
+//Desafio
 
 let a = 5
 let b = 10
@@ -64,3 +72,4 @@ console.log("O novo valor de a é", b)
 console.log("O novo valor de b é", a) 
 console.log("O novo valor de c é", a+b)
 
+// O valor de c é 15.
