@@ -37,12 +37,21 @@
 
 // Exercício 3
 
-const uSer1 = prompt("Tell me 1 daily chores...")
-const uSer2 = prompt("Tell me another daily chores...")
-const uSer3 = prompt("Tell me 1 daily chores...")
-const tArefas = [uSer1, uSer2, uSer3]
-console.log(tArefas)
-const uSer = prompt("Which you did today?")
-tArefas.splice(uSer,1)
-console.log(tArefas)
+// const uSer1 = prompt("Tell me 1 daily chores...")
+// const uSer2 = prompt("Tell me another daily chores...")
+// const uSer3 = prompt("Tell me 1 daily chores...")
+// const tArefas = [uSer1, uSer2, uSer3]
+// console.log(tArefas)
+// const uSer = prompt("Which you did today?")
+// tArefas.splice(uSer,1)
+// console.log(tArefas)
 
+// Desafio
+const pHrase = prompt("Tell me a secret!")
+console.log(pHrase.trim())
+
+const fruits = ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"]
+const indice = fruits.indexOf("Abacaxi")
+console.log(indice)
+const fruit = fruits.length
+console.log(fruit)
