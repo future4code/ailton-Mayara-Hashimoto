@@ -19,39 +19,68 @@
 // phrase()
 
 // b)
-// function  phrase (name, age, address, occupation){
-//      name = prompt("Name") 
-//      age = prompt Number ("Age")      
-//      address = prompt("Address")
-//      occupation = prompt("Occupation")
-//      console.log(`Hi, my name is " ${name}, "I am "${age}, "I live at " ${address}, "my occupation is " ${occupation}`)
-// }
-// console.log(function)
+const a = "Mayara"
+const b = 33
+const c = "Aclimação"
+const d = "Estudante"
+
+function  phrase(a,b,c,d){
+  a = a.toLowerCase("Mayara")
+  c = c.toLowerCase("Aclimação")
+  d = d.toLowerCase("Estudante")
+}
+console.log(phrase(`Eu ${a}, com ${b}, moro na ${c} e sou ${d}`))
 
 // Exercício 2 
 // // a) 
-const num1 = 6
-const num2 = 8
-function soma(num1,num2) {
-  const soma = num1 + num2
-    return soma
-}
-console.log(soma(num1,num2))
+// const num1 = 6
+// const num2 = 8
+// function soma(num1,num2) {
+//   const soma = num1 + num2
+//     return soma
+// }
+// console.log(soma(num1,num2))
 
-// // // b)
-const fu = (a,b) => a >= b
-console.log(fu (6, 8))
+// // // // b)
+// const fu = (a,b) => a >= b
+// console.log(fu (6, 8))
 
-// c)
-const dd = num1 % 2
-console.log(dd)
+// // c)
+// const dd = num1 % 2
+// console.log(dd)
 
 //d)
- name = "MAYARA"
-function change(name) {
-    name = name.toLowerCase()
-    return name
-}
-console.log(name)
+// const name = "MAYARA"
+// function edit(name) {
+//   name = name.toLowerCase()
+// return name
+// }
+// console.log(edit(name))
 
 // EXERCÍCIO 3
+// const num1 = 3
+// const num2 = 30
+// function soma(num1,num2) {
+//   const soma = num1 + num2
+//     return soma
+// }
+// console.log(soma(num1,num2))
+
+
+// function multi(num1,num2) {
+//   const multi = num1 * num2
+//     return multi
+// }
+// console.log(multi(num1,num2))
+
+// function sub(num2,num1) {
+//   const sub = num2 - num1
+//     return sub
+// }
+// console.log(sub(num2,num1))
+
+// function div(num2,num1) {
+//   const div = num2 / num1
+//     return div
+// }
+// console.log(div(num2,num1))
