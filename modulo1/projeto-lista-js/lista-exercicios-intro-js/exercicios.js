@@ -17,32 +17,25 @@ function imprimeMensagem() {
 // EXERCÍCIOS PARA FAZER ------------------------------------------------------------------
 
 // EXERCÍCIO 01
-function calculaAreaRetangulo(a, b) {
-  let area = (a * b)
-  return area
-}
-console.log(calculaAreaRetangulo2(5,3))
 
-function calculaAreaRetangulo2(c, d) {
-  let area = (c * d)
-  return area
+function calculaAreaRetangulo(a, b) {
+  let altura = prompt("Numero")
+  let largura = prompt("Numero2")
+  let area = altura * largura
+console.log(area)
 }
-console.log(calculaAreaRetangulo(2,6))
+
  
 // EXERCÍCIO 02
-function imprimeIdade(atual, nascimento) {
-    let resultado = (atual - nascimento)
-    return resultado
+function imprimeIdade() {
+  let atual = prompt("atual")
+  let nascimento = prompt("nascimento")
+  let resultado = atual - nascimento
+    console.log(resultado)
 
 }
-console.log(imprimeIdade(2020,1990))
 
-function imprimeIdade2(ano1, ano2) {
-  let resultado2 = (ano1 - ano2)
-  return resultado2
 
-}
-console.log(imprimeIdade(2021,1967))
 
 // EXERCÍCIO 03
 function calculaIMC(peso, altura) {
@@ -59,23 +52,26 @@ function calculaIMC2(peso1, altura1) {
 }
 console.log(calculaIMC2(70,1.65))
 // EXERCÍCIO 04
-//   const nome = prompt("Nome")
-//   const idade = Number(prompt("Idade"))
-//   const email = prompt("Email")
-// function imprimeInformacoesUsuario(nome,idade,email) {
-//   const infos = `"Meu nome é "${nome}, "tenho "${idade} "anos, e o meu email é" ${email}.`
-//    return infos
-// }
-// console.log(imprimeInformacoesUsuario)
+ 
+function imprimeInformacoesUsuario() {
+  const nome = prompt("Nome")
+  const idade = Number(prompt("Idade"))
+  const email = prompt("Email")
+console.log(`Meu nome é ${nome}, tenho ${idade} anos, e o meu email é ${email}.`)
+  
+}
+
 // // EXERCÍCIO 05
-// const a = "Azul"
-// const b = "Amarelo"
-// const c = "Vermelho"
-// function imprimeTresCoresFavoritas(a,b,c) {
-//   const favoritas = a, b, c
-//  return favoritas
-// }
-// console.log(imprimeTresCoresFavoritas(favoritas))
+
+function imprimeTresCoresFavoritas() {
+const cores = []
+cores [0] prompt("cor 1") 
+cores [1] prompt("cor 2") 
+cores [2] prompt("cor 3") 
+console.log(cores)
+
+}
+
 // EXERCÍCIO 06
  const hi = "oi"
 function retornaStringEmMaiuscula(hi) {
@@ -109,45 +105,47 @@ console.log(calculaIngressosEspetaculo2(5500,50))
 // EXERCÍCIO 08
 
 
-// function checaStringsMesmoTamanho(string1, string2) {
-//   const string1 = "ola"
-//   const string2 = "abc"
-//   string1.lenght === string2.lenght
+function checaStringsMesmoTamanho(string1, string2) {
 
-// }
-// console.log(checaStringsMesmoTamanho())
+ return string1.lenght === string2.lenght
+
+}
+
+
 
 // EXERCÍCIO 09
-// const array = ["1, 2, 3"]
-// function retornaPrimeiroElemento(array) {
+const array = ["1, 2, 3"]
+function retornaPrimeiroElemento(array) {
  
-//  const numero = array[0]
-//  return numero
+ const numero = array[0]
+ return numero
 
-// }
-// console.log(retornaPrimeiroElemento(numero))
+}
+
 
 // EXERCÍCIO 10
-// const array1 = ["1, 2, 3"]
-// function retornaUltimoElemento(array1) {
+function retornaUltimoElemento(array1) {
  
-//  const numero1 = array1[2]
-//  return numero1
+ return array1.pop()
 
-// }
-// console.log(retornaUltimoElemento(numero1))
+}
+
 
 
 
 // EXERCÍCIO 11
 function trocaPrimeiroEUltimo(array) {
-  
+  let array1 = array [0]
+  let tamanhoArray = array.lenght
+  let ultimo = tamanhoArray - 1
+array [0] = array [ultimo]
+array [ultimo] = array1
 
 }
 
 // EXERCÍCIO 12
 function checaIgualdadeDesconsiderandoCase(string1, string2) {
-  // implemente sua lógica aqui
+  return string1.toLowerCase().includes(string2.toLowerCase())
 
 }
 
