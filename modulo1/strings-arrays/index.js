@@ -47,11 +47,11 @@
 // console.log(tArefas)
 
 // Desafio
-const pHrase = prompt("Tell me a secret!")
-console.log(pHrase.trim())
+// const pHrase = prompt("Tell me a secret!")
+// console.log(pHrase.trim())
 
-const fruits = ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"]
-const indice = fruits.indexOf("Abacaxi")
-console.log(indice)
-const fruit = fruits.length
-console.log(fruit)
+// const fruits = ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"]
+// const indice = fruits.indexOf("Abacaxi")
+// console.log(indice)
+// const fruit = fruits.length
+// console.log(fruit)

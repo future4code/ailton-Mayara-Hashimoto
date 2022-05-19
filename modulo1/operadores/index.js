@@ -58,19 +58,18 @@
 
 // console.log(meses,  dias, horas)
 
-//Exercício 4
+// //Exercício 4
 
-let nUm = Number (prompt ("Digite um número, por favor."))
-let nDois = Number (prompt ("Mais um número, por favor."))
-const condicao1 = nUm > nDois
-const condicao2 = nUm === nDois
-console.log(condicao1, condicao2)
+// let nUm = Number (prompt ("Digite um número, por favor."))
+// let nDois = Number (prompt ("Mais um número, por favor."))
+// const condicao1 = nUm > nDois
+// const condicao2 = nUm === nDois
+// console.log(condicao1, condicao2)
 
-const condicao3 = nUm % nDois
-let division1 = condicao3 === 0
-console.log(condicao3 % division1)
-const condicao4 = nDois % nUm
-let division2 = condicao4 === 0
-console.log(condicao4, division2)
+// const condicao3 = nUm % nDois
+// let division1 = condicao3 === 0
+// console.log(condicao3 % division1)
+// const condicao4 = nDois % nUm
+// let division2 = condicao4 === 0
+// console.log(condicao4, division2)
 
-//
