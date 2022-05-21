@@ -10,34 +10,37 @@
  * 
  * 
  */
-const game = confirm("Welcome, let's play Blackjack!")
-let card1 = comprarCarta()
-let card2 = comprarCarta()
-let card3 = comprarCarta()
-let card4 = comprarCarta()
-const round1 = card1.valor + card2.valor
-const round2 = card3.valor + card4.valor
-const gamer = (number, numbers) =>{
-return `Player 1 cards: ${number} ${numbers} 
-points = ${number.valor + numbers.valor}`
+
+   const jogo = confirm("Welcome, let's play Blackjack!") 
+      let carta1 = comprarCarta()
+      let carta2 = comprarCarta()
+      let carta3 = comprarCarta()
+      let carta4 = comprarCarta()
+   const jogada1 = carta1.valor + carta2.valor
+   const jogada2 = carta3.valor + carta4.valor
+   const jogador1 = (number, numbers) =>{
+      return `Jogador 1 cartas: ${number} ${numbers} 
+points = ${carta1.valor + carta2.valor}`
 }
-const gamer2 = (number1, numbers2) =>{
-return `Player 2 cards: ${number1} ${numbers2} 
-points = ${number1.valor + numbers2.valor}`
+   const jogador2 = (number1, numbers2) =>{
+      return `Jogador 2 cartas: ${number1} ${numbers2} 
+points = ${carta3.valor + carta4.valor}`
 }
 
- if (confirm("Start new round?") === true) {
-      console.log("Nice! Pick a card!")
-   }  else if (game === false) {
-    console.log("Game Over!")
- } if (game === true) {
-    console.log(`Player 1 ${gamer(card1, card2)}, Player 2 ${gamer2(card3, card4)}`)
- } if (round1 < round2) {
-    console.log("Player 1 won!")
- } else if (round1 > round2) {
-    console.log("Player 2 won!")
- } else if (round1 === round2) {
-    console.log("Oh... Another round?")
+ if (confirm("Nova rodada?") === true) {
+      console.log("Peça uma carta!")
+   }  else if (jogada1 === jogada2) {
+    console.log("Empate")
+ } if (jogo === true) {
+    console.log(` ${jogador1(carta1.valor, carta2.valor)},  
+    ${jogador2(carta3.valor, carta4.valor)}`)
+ } if (jogada1 > jogada2) {
+    console.log("Jogador 1 venceu!")
+ } else if (jogada1 < jogada2) {
+    console.log("Jogador 2 venceu!")
+ } else if (jogo === false) {
+    console.log("Não houve jogo!")
  } else {
     console.log("Oh.. Whaaaa...")
  }
+ 
