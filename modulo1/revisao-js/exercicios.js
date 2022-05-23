@@ -77,17 +77,43 @@ function retornaNPrimeirosPares(n) {
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
-  let 
+    if (ladoA === ladoB && ladoB === ladoC) {
+        return "Equilátero"
+    } else if (ladoA === ladoB && ladoA !== ladoC || ladoB === ladoC && ladoA || ladoA === ladoC && ladoA !== ladoB) {
+        return "Isósceles"
+    } else if (ladoA !== ladoB && ladoB !== ladoC && ladoA !== ladoC) {
+        return "Escaleno"
+    }
 } 
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-  
+    let maior1 = -Infinity
+    let maior2 = -Infinity
+    let menor1 = Infinity
+    let menor2 = Infinity
+        for (let num of array) {
+            if (num > maior1) {
+                maior1 = num
+            } if (num < menor1) {
+                menor1 = num
+            }
+        }
+        for (let num of array) {
+            if (num > maior2 && num !== maior1) {
+                maior2 = num
+            } if (num < menor2 && num !== menor1) {
+                menor2 = num
+            }
+        }
+    const final = [maior2, menor2]
+    return final
 }
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-   
+  
+    return `Venha assistir ${nome}, de ${ano}, dirigido por ${diretor} e estrelado por ${atores}`
 }
 
 // EXERCÍCIO 12
