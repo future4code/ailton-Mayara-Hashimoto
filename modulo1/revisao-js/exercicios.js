@@ -28,12 +28,12 @@ function retornaNumerosPares(array) {
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
-
+    return array.filter((a) => a % 2 === 0).map(a => a ** 2)
 }
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-  
+    
 }
 
 // EXERCÍCIO 07
