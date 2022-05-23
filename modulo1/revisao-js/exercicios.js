@@ -17,18 +17,14 @@
 // }
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-    return array.sort(array % 2)
+    return array.sort((a,b) => a - b)
 }
 
 // EXERCÍCIO 04
 
-// function retornaNumerosPares(array) {
-//    if (numeros % 2 === 0) {
-//        const resultado = numeros/2
-//        array(resultado)
-//    }
-//    return array.filter()
-// }
+function retornaNumerosPares(array) {
+    return array.sort((a,b) => a - b).filter((a,b) % 2 === 0)
+}
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
