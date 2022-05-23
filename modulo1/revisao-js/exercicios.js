@@ -32,24 +32,53 @@ function retornaNumerosParesElevadosADois(array) {
 }
 
 // EXERCÍCIO 06
+
 function retornaMaiorNumero(array) {
-    
+    let numero = -Infinity
+   for (let i = 0; i < array.length; i++) {
+       if (array[i] > numero) {
+           numero = array[i]
+       }
+   } return numero
 }
 
 // EXERCÍCIO 07
-function retornaObjetoEntreDoisNumeros(num1, num2) {
 
-}
+function retornaObjetoEntreDoisNumeros(num1, num2) {
+    let maior
+    let menor
+        if (num1 > num2) {
+            maior = num1
+            menor = num2
+        } else {
+            maior = num2
+            menor = num1
+        } 
+    let divisor
+    if (maior % menor === 0) {
+        divisor = true
+    } else if(maior % menor !== 0) {
+        divisor = false
+        }
+    
+    let diferencas = maior - menor
+    return {maiorNumero: maior, maiorDivisivelPorMenor:divisor, diferenca:diferencas}
+} 
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
-   
+   let pares = [];
+   for (let i = 0; pares.length < n; i++){
+       if (i % 2 === 0) {
+           pares.push(i)
+       }
+   } return pares
 }
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
-
-}
+  let 
+} 
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
@@ -78,7 +107,7 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-
+ 
 }
 
 // EXERCÍCIO 15A
