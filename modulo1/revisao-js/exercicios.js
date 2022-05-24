@@ -112,20 +112,8 @@ function retornaSegundoMaiorESegundoMenor(array) {
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-    let nome = []
-    let ano = []
-    let diretor = []
-    let atores = []
-    for (let a = 0; filme.nome; a++) {
-        nome.push(`${filme.nome[a]}`)
-    } for (let a = 0; filme.ano; a++) {
-        ano.push(`${filme.ano[a]}`)
-    } for (let a = 0; filme.diretor; a++) {
-        diretor.push(`${filme.diretor[a]}`)
-    } for (let a = 0; filme.atores; a++) {
-        atores.push(`${filme.atores[a]}`)
-    }
-    return `Venha assistir ao filme ${filme.nome[a]}, de ${filme.ano[a]}, dirigido por ${filme.diretor[a]} e estrelado ${filme.atores[a]} `
+    filme = {... filme}
+return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores[0]}, ${filme.atores[1]}, ${filme.atores[2]}, ${filme.atores[3]}.`
 }
 
 // EXERCÍCIO 12
@@ -134,22 +122,20 @@ function retornaPessoaAnonimizada(pessoa) {
 }
 
 // EXERCÍCIO 13A
-// function retornaPessoasAutorizadas(pessoas) {
-//   const pode = []
-//   let pessoas = pode.filter((pode) => {
-//       if (pode.altura > 1.5 && pode.idade > 15 && pode.idade < 60) {
-//           pode.push(pode)
-//       }
-//   })
-//   return pessoas
-// }
+function retornaPessoasAutorizadas(pessoas) {
+    const pessoasAut = pessoas.filter((autorizadas) =>{
+        return autorizadas.altura >= 1.5 && autorizadas.idade >=15 &&
+        autorizadas.idade < 60
+    })
+    return pessoasAut
+}
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
-  const pessoa = pessoas.filter((itens) => {
-      return itens.idade <= 14 || itens.idade > 60 || itens.altura < 150
-  })
-  return pessoa
+    const pessoasNaoAuto = pessoas.filter((dados) => {
+        return dados.idade <= 14 ||  dados.idade > 60 ||  dados.altura < 1.5
+    })
+    return pessoasNaoAuto
 }
 
 // EXERCÍCIO 14
