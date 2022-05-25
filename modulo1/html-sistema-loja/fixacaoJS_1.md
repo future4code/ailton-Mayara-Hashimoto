@@ -5,3 +5,4 @@ function calculaSalario(qtdeCarrosVendidos, valorTotalVendas) {
   return comissao + salario
 
 }
+```

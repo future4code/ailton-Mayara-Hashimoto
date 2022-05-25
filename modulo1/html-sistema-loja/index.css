@@ -1,0 +1,77 @@
+body {
+    background-color: rgb(105, 93, 107);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+h1 {
+    background-color: rgb(234, 180, 238);
+    color: rgb(204, 79, 120);
+    border-radius: 10px;
+    margin: 0px;
+    padding: 1%;
+}
+h3 {
+    color: mediumslateblue;
+
+}
+.indisponivel {
+    color: rgb(211, 136, 136);
+    font-weight: bold;
+}
+img {
+    border-radius: 8px;
+  }
+  link {
+      color:rgb(204, 79, 120);
+  }
+  button {
+      background-color: palevioletred;
+  }
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+ 
+  footer {
+    background-color: rgb(234, 180, 238);
+    color: rgb(204, 79, 120);
+    border-radius: 10px;
+    margin: 0px;
+    padding: 1%;
+  }
+
+  img:hover {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+
+  input[type=text], select {
+    width: 15%;
+    padding: 7px 7px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 10%;
+    background-color: palevioletred;
+    color: white;
+    padding: 7px 7px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #906ea3;
+  }
+  
+  div {
+    border-radius: 8px;
+    background-color: rgb(105, 93, 107);
+  }
