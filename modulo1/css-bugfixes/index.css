@@ -51,6 +51,7 @@ div img {
 }
 
 .container {
+    margin: 25px;
     height: 500px;
     text-align: center;
 }
