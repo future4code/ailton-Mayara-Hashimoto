@@ -127,10 +127,13 @@ td button {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    text-align: center;
 }
 
 #back-button:hover {
-    background-color: #635a3d
+    background-color: #635a3d;
+    text-align: center;
+    
 }
 .icone {
     background-color: white;
