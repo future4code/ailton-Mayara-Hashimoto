@@ -51,7 +51,6 @@ div img {
 }
 
 .container {
-    margin: 25px;
     height: 500px;
     text-align: center;
 }
@@ -68,12 +67,15 @@ div img {
   **/
 
 #container-de-descricao {
+    text-align: center;
+    padding: 30px;
     background-color: #2274a5;
     color: white;
 }
 
-#container-de-descricao>ol {
-    padding: 15px 0px;
+#container-de-descricao > ol {
+    padding: 40px 350px;
+    text-align: center;
 }
 
 #container-para-comprar {
@@ -107,12 +109,13 @@ td button {
     width: 150px;
     height: 30px;
     border-radius: 5px;
-    color: black;
+    color: rgb(5, 5, 5);
 }
 
 .container-do-search {
     margin-top: 20px;
     height: 100px;
+    background-color: white;
 }
 
 
@@ -129,9 +132,10 @@ td button {
 #back-button:hover {
     background-color: #635a3d
 }
-div img {
-    background: snow;
-}
 .icone {
+    background-color: white;
     width: 1%;
+}
+.back {
+    background-color: white;
 }
