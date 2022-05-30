@@ -8,6 +8,7 @@ main {
     border: 1px solid palevioletred;
     flex-grow: 1;
 }
+
 header {
     display: flex;
     height: 8vh;
@@ -15,6 +16,11 @@ header {
     justify-content: space-between;
     padding: 0 10px;
     background-color: mediumvioletred;
+}
+button {
+    display: flex;
+    justify-content: flex-end;
+    
 }
 .sizemenot {
     height: 25px;
@@ -26,8 +32,7 @@ header {
     height: 15px;
     width: 15px;
     display: flex;
-    justify-content: flex-start;
-    
+    align-items: right;
     
 }
 .sizemealso {
@@ -45,6 +50,7 @@ header {
 }
 #column{
     display: flex;
+    justify-content: flex-start;
     
 }
 section{  
@@ -54,22 +60,41 @@ section{
     align-items: flex-start;
     justify-content: space-between;
 }
-.smallimg{
+.annoyed {
     display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 5px;
+    margin-top: 10px;
+}
+.smallimg {
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.smallimg2 {
+    display: flex;
+    justify-content: flex-end;
 }
 .sidebar {
-    width: 200px;
+    width: 100px;
     display: flex;
-    gap: 15px;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content:flex-start;
     align-items: stretch;
 }
+/* a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+} */
 #two {
     background-color: white;
     display: flex;
-
     flex-grow: auto;
     gap: 15px;
 }
