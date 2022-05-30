@@ -53,7 +53,7 @@ button {
     justify-content: flex-start;
     
 }
-section{  
+section {  
     background-color: #f2d0e0;
     display: flex;
     flex-grow: 25px;
@@ -85,29 +85,25 @@ section{
     justify-content:flex-start;
     align-items: stretch;
 }
-/* a {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-} */
+
 #two {
     background-color: white;
     display: flex;
-    flex-grow: auto;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    flex-direction: row;
     gap: 15px;
 }
 .card {
     border: 1px solid black;
-    width: 150px;
+    width: 200px;
     display: flex;
     flex-direction: column;
     text-align: center;
-    box-shadow: 1px 1px darkgray;
+    box-shadow: 2px 2px darkgray;
     justify-content: space-between;
-    flex-grow: auto;
-    gap: auto;
+    
+    gap: 15px;
 }
 
 img {
