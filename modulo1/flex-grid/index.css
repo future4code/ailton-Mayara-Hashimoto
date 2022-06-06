@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main {
+    display: flex;
+    border: 1px solid palevioletred;
+    flex-grow: 1;
+}
+
+header {
+    display: flex;
+    height: 10vh;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    background-color: mediumvioletred;
+}
+button {
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.sizemenot {
+    height: 25px;
+    width: 25px;
+    justify-content: space-between;
+    gap: 15px;
+}
+.sizeme {
+    height: 15px;
+    width: 15px;
+    display: flex;
+    align-items: right;
+    
+}
+.sizemealso {
+    height: 15px;
+    width: 15px;
+    display: flex;
+    align-items: right;
+    
+    gap: 10px;
+}
+#container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+#column{
+    display: flex;
+    justify-content: flex-start;
+    
+}
+section {  
+    background-color: #f2d0e0;
+    display: flex;
+    flex-grow: 25px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.annoyed {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 5px;
+    margin-top: 10px;
+}
+.smallimg {
+    display: flex;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.smallimg2 {
+    display: flex;
+    justify-content: flex-end;
+}
+.sidebar {
+    width: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: stretch;
+}
+
+#two {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    flex-direction: row;
+    gap: 15px;
+}
+.card {
+    border: 1px solid black;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 2px 2px darkgray;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+img {
+    height: auto;
+    width: auto;
+}
+.two {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+footer{
+    display: flex;
+    height: 8vh;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 12px;
+    background-color: mediumvioletred;
+
+}
