@@ -10,26 +10,26 @@ function App() {
       <div className="page-section-container">
         <h2>Dados pessoais</h2>
         <CardGrande 
-          // imagem={"https://i.ibb.co/xSyLRdk/ima.jpg"} 
-          // nome="Mayara Costa" 
-          // descricao="Hi, I'm Mayara. I am studying to become a Fullstack Web Developer. I like to listen to music, one of my favourite genres is Kpop. I also deeply love the Harry Potter series (movies and books). My favourite book is Pride and Prejudice."
+          imagem={"https://i.ibb.co/xSyLRdk/ima.jpg"} 
+          nome="Mayara Costa" 
+          descricao="Hi, I'm Mayara. I am studying to become a Fullstack Web Developer. I like to listen to music, one of my favourite genres is Kpop. I also deeply love the Harry Potter series (movies and books). My favourite book is Pride and Prejudice."
         />
         
         <ImagemButton 
-          imagem="https://image.flaticon.com/icons/png/512/117/117472.png" 
+          imagem="https://images.vexels.com/media/users/3/189736/isolated/preview/5301d109614cc1af7ef2b7b29ecafe91-goong-vetor-de-seta-para-baixo.png" 
           texto="Ver mais"
         />
       </div>
       <div className="page-section-container">
       <CardPequeno
-        imagem=""
+        imagem="https://cdn-icons-png.flaticon.com/512/115/115757.png"
         nome="E-mail:"
         descricao="fakeemail@gmail.com"
       />
       </div>
       <div className="page-section-container">
          <CardPequeno
-        imagem=""
+        imagem="https://w7.pngwing.com/pngs/583/119/png-transparent-computer-icons-map-desktop-wallpaper-map-address.png"
         nome="Address:"
         descricao="São Paulo - SP, Brazil."
       />
