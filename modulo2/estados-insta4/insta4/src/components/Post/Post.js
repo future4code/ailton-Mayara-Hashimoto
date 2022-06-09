@@ -15,6 +15,7 @@ const PostContainer = styled.div`
 `
 
 const PostHeader = styled.div`
+  background-color: beige;
   height: 40px;
   display: flex;
   align-items: center;
@@ -22,6 +23,7 @@ const PostHeader = styled.div`
 `
 
 const PostFooter = styled.div`
+  background-color: beige;
   height: 40px;
   display: flex;
   align-items: center;
@@ -98,11 +100,11 @@ class Post extends React.Component {
 
     return <PostContainer>
       <PostHeader>
-        <UserPhoto img src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
+        <UserPhoto src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
         <p>{this.props.nomeUsuario}</p>
       </PostHeader>
 
-      <PostPhoto img src={this.props.fotoPost} alt={'Imagem do post'}/>
+      <PostPhoto src={this.props.fotoPost} alt={'Imagem do post'}/>
 
       <PostFooter>
         <IconeComContador

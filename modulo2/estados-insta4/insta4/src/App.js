@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Post from './components/Post/Post';
 
 const MainContainer = styled.div`
+  background-color: bisque;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -10,23 +11,24 @@ const MainContainer = styled.div`
 `
 
 
+
 class App extends React.Component {
           state ={
             users: [
               {
                 username: 'paulinhas_notonfire',
-                profile: <img src="https://picsum.photos/50/50"/>,
-                update: <img src="https://picsum.photos/200/150"/>
+                profile: 'https://picsum.photos/50/50',
+                update: 'https://picsum.photos/200/150',
               },
               {
                 username: 'i.n.ahhh',
-                profile: <img src="https://i.pinimg.com/564x/28/c6/1c/28c61c77c0330d19925620b7f870033c.jpg"/>,
-                update: <img src="https://i.pinimg.com/564x/1f/b0/57/1fb0570713350667f2dda43c626959d4.jpg"/>,
+                profile: 'https://i.pinimg.com/564x/28/c6/1c/28c61c77c0330d19925620b7f870033c.jpg' ,
+                update:'https://i.pinimg.com/564x/1f/b0/57/1fb0570713350667f2dda43c626959d4.jpg',
               },
               {
-                username: 'hyun.nie',
-                profile:<img src="https://i.pinimg.com/564x/2f/05/9c/2f059c46010bb8e77018a95740235a6c.jpg"/>,
-                update: <img src="https://i.pinimg.com/564x/b7/52/a9/b752a968a6555ffe0d0d1c6c9d1f6278.jpg"/>,
+                username:'hyun.nie',
+                profile:'https://i.pinimg.com/564x/2f/05/9c/2f059c46010bb8e77018a95740235a6c.jpg',
+                update:'https://i.pinimg.com/564x/b7/52/a9/b752a968a6555ffe0d0d1c6c9d1f6278.jpg',
               },              
             ],
             valorInputUser:"",
@@ -61,15 +63,15 @@ class App extends React.Component {
     
     const moreUsers = this.state.users.map((account) => {
       return (
-        <Post>
-          {account.username} - {account.profile} - {account.update}
-        </Post>
+        <Post nomeUsuario = {account.username} fotoUsuario = {account.profile} fotoPost = {account.update}  />
+        
+        
       );
     });
    
     return (
       <MainContainer>
-       
+       <header><h1>:: MyGram ::</h1></header>
 <h4>Creat a New Post</h4>
         <input
             value={this.state.valorInputUser}
@@ -88,12 +90,11 @@ class App extends React.Component {
           />
           <div>
            <button onClick={this.addUser}>Make It Pretty!</button>
-          </div>
-              <div>{moreUsers}</div>
-              
-        <Post>
-          {moreUsers}
-        </Post>
+          </div>            
+      
+         
+         {moreUsers}
+   
        
       </MainContainer>
     );
