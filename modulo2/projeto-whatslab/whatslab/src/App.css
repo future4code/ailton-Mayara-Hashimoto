@@ -13,7 +13,7 @@ div {
     justify-content: center;
     align-items: center;
     height: 100%;
-    border: 1px solid bisque;
+    border: 1px solid #ffe4c4;
 }
 .header {
     margin: 15px;
@@ -24,7 +24,7 @@ div {
     border-radius: 4px ;
 }
 button {
-    background-color: plum;
+    background-color: #dda0dd;
     border: none;
     border-radius: 4px;
     color: white;
@@ -43,10 +43,15 @@ h1 {
   margin: 5px auto;
   background-color: beige;
   padding: 5px;
+  justify-items: center;
   text-align: flex-start;
   color: rgb(0, 0, 0);
-
   position:relative;
+}
+.profile {
+    height: 50px;
+    width: 50px;
+    border-radius: 4px;
 }
 input {
     display: flex;
@@ -57,9 +62,11 @@ input {
 }
 .boxdois {
     width: 100px;
+    height: 30px;
 }
 .boxtres {
-    width: 300px;
+    width: 250px;
+    height: 30px;
 }
 footer {
     display: flex;
