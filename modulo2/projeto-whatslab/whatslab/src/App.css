@@ -4,7 +4,7 @@
     background-color: beige;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.container {
+/* .container {
     height: 500px;
 }
 div {
@@ -43,17 +43,16 @@ h1 {
   margin: 5px auto;
   background-color: beige;
   padding: 5px;
-  justify-items: center;
   text-align: flex-start;
   color: rgb(0, 0, 0);
-  position:relative;
-}
-.profile {
+  position:relative; */
+/* } */
+img {
     height: 50px;
     width: 50px;
     border-radius: 4px;
 }
-input {
+/* input {
     display: flex;
     border: 2px solid rgb(194, 148, 148);
     height: 20px;
@@ -72,4 +71,4 @@ footer {
     display: flex;
     justify-content: center;
     position: bottom;
-}
+} */
