@@ -30,7 +30,12 @@ const Messages = styled.div`
   padding: 5px;
   text-align: flex-start;
   color: rgb(0, 0, 0);
+  overflow: auto;
+  word-wrap: break-word;
+  word-break: break-all;
+
   `
+  
   const Users = styled.img `
     border-radius: 4px;
     align-items: center;
