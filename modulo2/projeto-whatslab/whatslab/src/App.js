@@ -57,7 +57,7 @@ const MessageBox = styled.input `
 const Footer = styled.footer `
     display: flex;
     justify-content: center;
-    position: bottom;
+    position: absolute bottom 0;
 `
 const Button = styled.button `
     background-color: #dda0dd;
@@ -169,15 +169,31 @@ class App extends React.Component {
             value={this.state.valorInputUsuario}
             onChange={this.onChangeInputUsuario}
             placeholder={"Username"}
+            onKeyPress={(e) => {
+              if (e.key === "Enter") {
+                  this.setState({ valorInputUsuario : e.target.value })
+                  this.adicionaUsuario ()
+                  
+              }
+          }}
+          type="text"
           />
 
           <MessageBox
             value={this.state.valorInputMessage}
             onChange={this.onChangeInputMessage}
             placeholder={"Message"}
+            onKeyPress={(e) => {
+              if (e.key === "Enter") {
+                  this.setState({ valorInputMessage : e.target.value })
+                  this.adicionaUsuario ()
+                  
+              }
+          }}
+          type="text"
           />
 
-          <Button onClick={this.adicionaUsuario}>Send</Button>
+          <Button onClick={this.adicionaUsuario}>Submit</Button>
           </Footer>
         </div>
         
