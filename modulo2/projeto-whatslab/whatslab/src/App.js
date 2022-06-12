@@ -1,5 +1,10 @@
+import { eventWrapper } from "@testing-library/user-event/dist/utils";
 import React from "react";
 import styled from 'styled-components'
+import um from './imgs/um.png'
+import dois from './imgs/dois.png'
+import tres from './imgs/tres.png'
+import quatro from './imgs/quatro.png'
 // import styled from "./App.css"
 
 
@@ -66,7 +71,6 @@ const Button = styled.button `
     font-size: 14px;
 `
 const Text = styled.div`
-background-color: whitesmoke;
 border-radius: 4px;
 align-items: center;
 flex-direction: column;
@@ -87,20 +91,23 @@ class App extends React.Component {
     
     usuario: [
       {
-        nome: <Users src='https://i.im.ge/2022/06/12/rHjSIx.png' />,
+        nome: <Users src={quatro} alt="BangChan"/> ,
         message: <Text>Welcome to BubblesChat Stay! Here you can actually talk to us when we're avaliable! For a limited amout of time!</Text>
       },
       {
-        nome: <Users src='https://i.im.ge/2022/06/12/rHj7PS.png' />,
+        nome: <Users src={um} alt="Hyunjin"/>,
         message: <Text>Hi Stayy...</Text>
       },  
       {
-        nome: <Users src='https://i.im.ge/2022/06/12/rHjady.png' />,
-        message: <Text>Hello!!!</Text>
+        nome: <Users src={tres} alt="IN" />,
+        message: <Text>Hello Staay!!!</Text>
       }, 
       {
-        nome: <Users src='https://i.im.ge/2022/06/12/rHjqJJ.png' />,
+        nome: <Users src={dois} alt="ChangBin" />,
         message: <Text>STAAAY!!!</Text>
+      },
+      {
+        message: <Text>All members are offline right now... </Text>
       }
     ],
     
@@ -147,6 +154,7 @@ class App extends React.Component {
     });
 
 
+
     return (
       <Container>
        
@@ -160,7 +168,7 @@ class App extends React.Component {
           <Username
             value={this.state.valorInputUsuario}
             onChange={this.onChangeInputUsuario}
-            placeholder={"Usuario"}
+            placeholder={"Username"}
           />
 
           <MessageBox
@@ -169,7 +177,7 @@ class App extends React.Component {
             placeholder={"Message"}
           />
 
-          <Button onClick={this.adicionaUsuario}>Enviar</Button>
+          <Button onClick={this.adicionaUsuario}>Send</Button>
           </Footer>
         </div>
         
