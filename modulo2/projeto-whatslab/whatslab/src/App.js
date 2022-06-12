@@ -26,21 +26,32 @@ const Messages = styled.div`
   width: 500px;
   height: 660px;
   margin: 5px auto;
-  background-color: #D8C39A;
+  background-color: #FFE4E1;
   padding: 5px;
   text-align: flex-start;
   color: rgb(0, 0, 0);
   overflow: auto;
   word-wrap: break-word;
   word-break: break-all;
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f57bf5;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D8BFD8;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FFC0CB;
+  }
 
-  `
-  
-  const Users = styled.img `
+` 
+const Users = styled.img `
     border-radius: 4px;
     align-items: center;
     justify-content: center;
-  `
+`
 const Username = styled.input `
     display: flex;
     border: 2px solid rgb(194, 148, 148);
@@ -48,7 +59,7 @@ const Username = styled.input `
     justify-content: space-between;
     width: 100px;
     height: 30px;
-  `
+`
 const MessageBox = styled.input `
     display: flex;
     border: 2px solid rgb(194, 148, 148);
@@ -157,9 +168,6 @@ class App extends React.Component {
         </UserMessage>
       );
     });
-
-
-
     return (
       <Container>
        
