@@ -5,15 +5,34 @@ import './styles.css'
 const TarefaList = styled.ul`
   padding: 0;
   width: 200px;
+  background-color: bisque;
 `
-
+const Titulo = styled.h1`
+color: bisque;
+background-color: blueviolet;
+`
 const Tarefa = styled.li`
+  color: blueviolet;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-align: left;
   text-decoration: ${({completa}) => (completa ? 'line-through' : 'none')};
 `
+const Button = styled.button`
+  background-color: bisque;
+  border: none;
+  color: blueviolet;
+  padding: 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  font-size: 16px;
+`
 
 const InputsContainer = styled.div`
+  color: blueviolet;
   display: grid;
+  border-radius: 5px;
   grid-auto-flow: column;
   gap: 10px;
 `
@@ -22,12 +41,12 @@ class App extends React.Component {
     state = {
       tarefas: [ {
         id: Date.now(),
-        texto: "Academia ",
+        texto: "Aula [Labenu] ",
         completa: false,
         },
         {
           id: Date.now(),
-          texto: "Estudar",
+          texto: "Estudar [Exercício]",
           completa: true
         },
   ],
@@ -35,12 +54,21 @@ class App extends React.Component {
       filtro: ''
     }
 
-  componentDidUpdate() {
-
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.id === this.state.tarefas) {
+      localStorage.setItem("tarefas, JSON.stringfy(this.state.tarefas")
+    }
   };
 
   componentDidMount() {
-
+    const tarefas = localStorage.getItem("tarefas")
+      if (tarefas) {
+        const listaTarefa = localStorage.getItem("tarefas")
+        const lista = JSON.parse(listaTarefa)
+        this.setState({id: lista[0]?.id})
+        this.setState({texto: lista[0]?.texto})
+        this.setState({completa: lista[0]?.completa})
+      }
   };
 
   onChangeInput = (event) => {
@@ -76,7 +104,7 @@ class App extends React.Component {
 
   onChangeFilter = (event) => {
     this.setState({filtro: event.target.value})
-  }
+  } 
 
   render() {
     const listaFiltrada = this.state.tarefas.filter(tarefa => {
@@ -92,10 +120,10 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <h1>Lista de tarefas</h1>
+        <Titulo>Lista de tarefas</Titulo>
         <InputsContainer>
           <input value={this.state.inputValue} onChange={this.onChangeInput}/>
-          <button onClick={this.criaTarefa}>Adicionar</button>
+          <Button onClick={this.criaTarefa}>Adicionar</Button>
         </InputsContainer>
         <br/>
 
