@@ -25,7 +25,6 @@ const Button = styled.button`
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  border-radius: 5px;
   font-size: 16px;
 `
 
@@ -56,7 +55,7 @@ class App extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.id === this.state.tarefas) {
-      localStorage.setItem("tarefas, JSON.stringfy(this.state.tarefas")
+      localStorage.setItem("tarefas", JSON.stringfy(this.state.tarefas))
     }
   };
 
