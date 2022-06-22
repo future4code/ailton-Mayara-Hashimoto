@@ -46,19 +46,31 @@ class App extends React.Component {
     });
   };
 
-  getUsers = () => {
-    axios
-    .get("https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users", {
-      headers: {
-        Authorization: "mayara-hashimoto-ailton"
+  getUsers = async () => {
+    const url = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users"
+      try {
+        const res = await axios.get(url, {
+          headers: {
+            Authorization: "mayara-hashimoto-ailton"
+          }
+        })
+        this.setState({users: res.data})
+      } catch (error) {
+        alert("Something went wrong. Please try again")
       }
-    }
-    ).then((response) => {
-      this.setState({users: response.data})
-    }).catch((error) => {
-     console.log(error.message)
-    })
+    // axios
+    // .get("https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users", {
+    //   headers: {
+    //     Authorization: "mayara-hashimoto-ailton"
+    //   }
+    // }
+    // ).then((response) => {
+    //   this.setState({users: response.data})
+    // }).catch((error) => {
+    //  console.log(error.message)
+    // })
   };
+
   delUsers = (id) => {
     if (window.confirm("Are you sure?")) {
       axios
