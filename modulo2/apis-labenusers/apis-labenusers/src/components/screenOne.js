@@ -57,39 +57,6 @@ color: #83c5be;
 
 export class ScreenOne extends React.Component {
   
-  state = {
-    users: [],
-    inputName: "",
-    inputEmail:"",
-  };
-
-  onChangeName = (event) => {
-    this.setState({inputName: event.target.value})
-  };
-  onChangeEmail = (event) => {
-    this.setState({inputEmail: event.target.value})
-  };
-  
-
-
-  postUsers = () => {
-    const body = {
-      name: this.state.inputName,
-      email: this.state.inputEmail
-    };
-    axios
-    .post("https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users", body,
-      {
-        headers: {
-          Authorization: "mayara-hashimoto-ailton"
-        } 
-      })
-      .then((response) => {
-      window.alert(response.message)
-    }).catch((error) => {
-      window.alert(error.message)
-    });
-  };
 
 
   render () {
@@ -98,15 +65,15 @@ export class ScreenOne extends React.Component {
         <ButtonCheck onClick={this.props.goScreenTwo}>Check Users List</ButtonCheck>
         <Header>SignUp</Header>
         <label>Name: 
-        <InputNome value={this.state.inputName} onChange={this.onChangeName} placeholder="Full Name"/> 
+        <InputNome value={this.props.inputName} onChange={this.props.onChangeName} placeholder="Full Name"/> 
         </label>
         <div>
         <label>E-mail: 
-        <InputEmail value={this.state.inputEmail} onChange={this.onChangeEmail} placeholder="E-mail"/>
+        <InputEmail value={this.props.inputEmail} onChange={this.props.onChangeEmail} placeholder="E-mail"/>
         </label>
         </div>
         <div>
-        <Button onClick={this.postUsers}>Send</Button>
+        <Button onClick={this.props.postUsers}>Send</Button>
         </div>
         <div>
         

@@ -1,7 +1,7 @@
 import React from "react";
 import axios from 'axios';
 import styled from "styled-components";
-import { ScreenOne } from "./screenOne";
+
 
 const MainContainer = styled.div `
 background-color: #ffddd2;
@@ -36,33 +36,21 @@ color: #83c5be;
 export class ScreenTwo extends React.Component {
 
 
-    deleteUsers = () => {
-        const body = {
-            name: this.state.inputName
-        };
-        axios
-        .post("https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/:id", body,
-      {
-        headers: {
-          Authorization: "mayara-hashimoto-ailton"
-        } 
-      })
-      .then((response) => {
-      window.alert(response.message)
-    }).catch((error) => {
-      window.alert(error.message)
-    });
-
-    }
-
+  
     render () {
+
+        const userNames = this.props.userList.map((user) => {
+            return <p>{user.name}  <DelButton onClick={() => {this.props.delUsers(user.id)}}>Delete</DelButton></p>
+        })
         
         return (
             <MainContainer>
                 <Button onClick={this.props.goScreenOne}>Go Back</Button>
                 <Header>UsersList</Header>
                 
-                {/* <DelButton onClick={this.deleteUsers}>Delete</DelButton> */}
+                <div>{userNames}</div>
+
+               
             </MainContainer>
         )
 
