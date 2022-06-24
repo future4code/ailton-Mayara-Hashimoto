@@ -5,7 +5,11 @@ export default class Home extends Component {
     return (
       <div> 
         <div>
-            <h3>recomendations:</h3>
+            <h3>recomendations:
+          
+
+
+            </h3>
         </div>
       </div>
     )

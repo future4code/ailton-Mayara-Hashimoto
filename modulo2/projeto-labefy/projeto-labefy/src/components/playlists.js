@@ -15,28 +15,92 @@ height: 30px;
 width: 150px;
 border-radius: 5px;
 `
+const ListBox = styled.div `
+border: pink;
+width: 200px;
+
+`
+const DelButton = styled.button` 
+background-color: #ee6c4d;
+border: none;
+padding: 5px;
+margin: 5px;
+height: 30px;
+width: 150px;
+border-radius: 5px;
+`
+
+
+export const Lists = (props) => {
+
+  return (
+    <div>         
+        <div> {props.more && 
+      <div>
+      <h3>add to your playlist:</h3>
+      <div>
+          <Input 
+          placeholder='name:'
+          value={props.inputPlaylist}
+          onChange={props.onPlaylist}
+          />
+      </div>
+      <div>
+          <Input placeholder='artist:'
+          value={props.inputArtist}
+          onChange={props.onArtist}
+          />
+      </div>
+      <div>
+          <Input placeholder='song link:'
+          value={props.inputSongs}
+          onChange={props.onSongs}
+          />
+      </div>
+      <div>
+          <Button onClick={() => props.postSong(props.id)} >send it in!</Button>
+
+          
+      </div>
+
+    </div>
+      } </div></div>
+  )
+}
 
 
 export default class Playlists extends Component {
+
+  state = {
+    more: false
+  };
+
+  showList = () => {
+    this.setState({more: !this.state.more})
+  }
+
   render() {
+    // console.log(this.props.play)
     return (
       <div>
-             <div>
-        <h3>create your playlist:</h3>
-        <div>
-            <Input placeholder='artist:'/>
-        </div>
-        <div>
-            <Input placeholder='song name:'/>
-        </div>
-        <div>
-            <Input placeholder='song link:'/>
-        </div>
-        <div>
-            <Button>send it in!</Button>
-        </div>
 
-      </div>
+        {this.props.play.map((item) => {
+          return <div key={item.id}>
+           <p onClick={this.showList}>{item.name} </p><DelButton onClick={() => this.props.delPlaylists(item.id) }>delete</DelButton>
+            <Lists 
+            inputPlaylist={this.props.inputPlaylist}
+            onPlaylist={this.props.onPlaylist}
+            inputArtist={this.props.inputArtist}
+            onArtist={this.props.onArtist}
+            inputSongs={this.props.inputSongs}
+            onSongs={this.props.onSongs}
+            more={this.state.more}
+            postSong={this.props.postSong}
+            id={item.id}
+            />
+          </div>
+        })}
+             
       </div>
     )
   }

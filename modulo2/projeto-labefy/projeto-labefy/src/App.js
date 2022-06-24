@@ -17,20 +17,27 @@ height: 30px;
 width: 150px;
 border-radius: 5px;
 `
+const Input = styled.input `
+width: 200px;
+height: 35px;
+border-radius: 5px;
+`
+const MainContainter = styled.div `
+background-color: #e0fbfc;
+height: 100vh;
+
+
+`
 
 export default class App extends Component {
   state = {
     telaAtual: "Home",
     playlists: [],
     artists: [],
-    songName: [],
     songs: [],
     inputPlaylist: "",
     inputArtist:"",
-    inputName: "",
     inputSongs:"",
-    inputEmail:"",
-    inputUser:"",
   };
 
   onPlaylist = (event) => {
@@ -45,21 +52,30 @@ export default class App extends Component {
   onName = (event) => {
     this.setState({inputName: event.target.value})
   }
-  onEmail = (event) => {
-    this.setState({inputEmail: event.target.value})
-  }
-  onUser = (event) => {
-    this.setState({inputUser: event.target.user})
-  }
+
 
   escolherTela = () => {
     switch (this.state.telaAtual) {
       case "Home":
         return <Home />;
       case "Playlists":
-        return <Playlists />;
+        return <Playlists 
+        play={this.state.playlists} 
+        postSong={this.postSong}
+        inputPlaylist={this.state.inputPlaylist}
+        onPlaylist={this.onPlaylist}
+        inputArtist={this.state.inputArtist}
+        onArtist={this.onArtist}
+        inputSongs={this.state.inputSongs}
+        onSongs={this.onSongs}
+        delPlaylists={this.delPlaylists}
+        />;
       case "SignUp":
-        return <SignUp />;
+        return <SignUp 
+        songs={this.state.songs}
+        play={this.state.playlists} 
+        tracks={this.allTracks}
+        />;
       case "SongsList":
         return <Songs />;
       default:
@@ -71,23 +87,27 @@ export default class App extends Component {
     this.setState({ telaAtual: nomeTela });
   };
 
-  // componentDidMount() {
-  //   this.allPlaylist();
-  //   this.allSong();
-  //   // this.search();
-  // }
+  componentDidMount() {
+    console.log(this.state.songs)
+    this.allPlaylists();
+    // this.allTracks();
+    // this.search();
+  }
   // componentDidUpdate(prevProps, prevState) {
-  //   if (this.state.playlists !== prevState.playlists) {
-  //     console.log("Update")
-  //   }
-  //   if (this.state.songs !== prevState.songs) {
-  //     console.log("Updated!")
-  //   }
+
+  //   // if (this.state.playlists !== prevState.playlists) {
+  //   //   this.allPlaylists()
+  //   //   console.log("Update")
+  //   // }
+  //   // if (this.state.songs !== prevState.songs) {
+  //   //   this.allPlaylists()
+  //   //   console.log("Updated!")
+  //   // }
   // }
 
   postPlaylist =() => {
     const body = {
-      playlist: this.state.inputPlaylist
+      name: this.state.inputPlaylist
     };
     axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists", body,
     {
@@ -101,19 +121,21 @@ export default class App extends Component {
       window.alert("this playlist name might have been already added. please, pick another one")
     });
   };
-  postSong =() => {
+  postSong =(id) => {
+    console.log(this.state)
     const body = {
-      name: this.state.inputName,
+      name: this.state.inputPlaylist,
       artist: this.state.inputArtist,
       url: this.state.inputSongs
     };
-    axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/:playlistId/tracks", body,
+    axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}/tracks`, body,
     {
       headers: {
         Authorization: "mayara-hashimoto-ailton"
       }
     })
     .then((re) =>{
+      console.log(re)
       window.alert("song added with success!")
     }).catch((er) =>{
       window.alert(er.message)
@@ -127,7 +149,8 @@ export default class App extends Component {
           Authorization: "mayara-hashimoto-ailton"
         }
       })
-      this.setState({playlists: res.data})
+        console.log(res)
+      this.setState({playlists: res.data.result.list})
     } catch(error) {
       alert("I guess we couldn't find what you looking for. Try again!")
     }
@@ -140,7 +163,7 @@ export default class App extends Component {
           Authorization: "mayara-hashimoto-ailton"
         }
       })
-      this.setState({songs: res.data})
+      this.setState({songs: res.data.result.tracks})
     }catch(error) {
       alert("Ops. Please try again.")
     }
@@ -153,10 +176,11 @@ export default class App extends Component {
           Authorization: "mayara-hashimoto-ailton"
         }
       })
-      const newPlaylist = this.state.playlists.filter.apply((item) => {
-        return item.id !==id
-      })
-      this.setState({playlists: newPlaylist})
+      // const newPlaylist = this.state.playlists?.filter.apply((item) => {
+      //   return item.id !== id
+      // })
+      // this.setState({playlists: newPlaylist})
+      this.allPlaylists()
     }
   };
   delTracks = (id) => {
@@ -179,17 +203,28 @@ export default class App extends Component {
   render() {
     return (
       <div>
+        <MainContainter>
          <h1>RockMyTunes</h1>
+   
         
         <div>
         <Button onClick={() => this.changeScreen("Home")}>Home</Button>
         <Button onClick={() => this.changeScreen("Playlists")}>Playlists</Button>
-        <Button onClick={() => this.changeScreen("SignUp")}>SignUp</Button>
+        <Button onClick={() => this.changeScreen("SignUp")}>Time to Listen</Button>
        
         </div>
-       
+       <div>
+        <p>create your playlist:</p>
+        <div>
+        <Input placeholder='playlist name:'
+               value={this.inputPlaylist}
+               onChange={this.onPlaylist}
+               /> <Button onClick={this.postPlaylist}>Go</Button>
+        </div>
+       </div>
         
         {this.escolherTela()}
+        </MainContainter>
       </div>
     );
   }
