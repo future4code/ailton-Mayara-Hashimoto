@@ -16,8 +16,9 @@ width: 150px;
 border-radius: 5px;
 `
 const ListBox = styled.div `
-border: pink;
-width: 200px;
+color: #6d6875;
+cursor: pointer;
+font-weight: bold;
 
 `
 const DelButton = styled.button` 
@@ -83,7 +84,7 @@ export default class Playlists extends Component {
     // console.log(this.props.play)
     return (
       <div>
-
+          <ListBox>
         {this.props.play.map((item) => {
           return <div key={item.id}>
            <p onClick={this.showList}>{item.name} </p><DelButton onClick={() => this.props.delPlaylists(item.id) }>delete</DelButton>
@@ -98,9 +99,11 @@ export default class Playlists extends Component {
             postSong={this.props.postSong}
             id={item.id}
             />
+
+         
           </div>
         })}
-             
+        </ListBox>     
       </div>
     )
   }

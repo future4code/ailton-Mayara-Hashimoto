@@ -7,6 +7,9 @@ import Playlists from './components/playlists'
 import Home from './components/home'
 import Songs from './components/songList'
 import { eventWrapper } from '@testing-library/user-event/dist/utils'
+import fundo from './components/imgs/bg.gif'
+import logo from './components/imgs/logo.png'
+
 
 const Button = styled.button` 
 background-color: pink;
@@ -23,10 +26,24 @@ height: 35px;
 border-radius: 5px;
 `
 const MainContainter = styled.div `
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+background-image: url(${fundo});
 background-color: #e0fbfc;
+background-repeat: none;
+background-size: cover;
+background-position: center;
 height: 100vh;
-
-
+padding-left: 5px;
+padding-right: 5px;
+justify-content: center;
+overflow: auto;
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #cbc0d3; }
+::-webkit-scrollbar-thumb { background: #be95c4; }
+::-webkit-scrollbar-thumb:hover { background: #5e548e; }
+`
+const Logo = styled.img `
+padding: 5px;
 `
 
 export default class App extends Component {
@@ -204,8 +221,8 @@ export default class App extends Component {
     return (
       <div>
         <MainContainter>
-         <h1>RockMyTunes</h1>
-   
+         {/* <h1>RockMyTunes</h1> */}
+   <Logo src={logo}/>
         
         <div>
         <Button onClick={() => this.changeScreen("Home")}>Home</Button>
@@ -214,7 +231,7 @@ export default class App extends Component {
        
         </div>
        <div>
-        <p>create your playlist:</p>
+        <h3>create your playlist:</h3>
         <div>
         <Input placeholder='playlist name:'
                value={this.inputPlaylist}
@@ -222,7 +239,7 @@ export default class App extends Component {
                /> <Button onClick={this.postPlaylist}>Go</Button>
         </div>
        </div>
-        
+      
         {this.escolherTela()}
         </MainContainter>
       </div>

@@ -12,14 +12,13 @@ width: 150px;
 border-radius: 5px;
 `
 const Box = styled.p`
-border: 2px;
-border-color: #3d5a80;
-/* width: 100%;
-height: 50px; */
-overflow: auto;
-::-webkit-scrollbar { width: 5px;}
-::-webkit-scrollbar-track { background: #293241; }
-::-webkit-scrollbar-thumb { background: #98c1d9; }
+cursor: pointer;
+color: #1d3557;
+`
+const Box1 = styled.p`
+cursor: pointer;
+color: #006d77;
+font-weight: bold;
 `
 
 
@@ -45,19 +44,19 @@ export default class SignUp extends Component {
 
     return (
       <div>
-        <h3>listen to your favorite songs</h3>
+        <h5>select a song and the player will appear</h5>
         <div>
-         <iframe  
+         <center><iframe  
          src={this.state.url}
          width="50%" height="80" frameBorder="0" 
          allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-         </iframe>
+         </iframe></center>
          <div>
           {this.props.play.map((item) => {
             return <div> 
-              <p>{item.name}</p> <Button onClick={() => this.more(item.id)}>Ver Mais</Button>
+              <Box1>{item.name}</Box1> <Button onClick={() => this.more(item.id)}>Ver Mais</Button>
               {this.state.more && this.props.songs.map((item) => {
-                return <Box onClick={() => this.tocar(item.url)}>{item.artist} {item.name}</Box>
+                return <Box onClick={() => this.tocar(item.url)}>{item.artist}: {item.name}</Box>
               })}
               </div>
           })}
