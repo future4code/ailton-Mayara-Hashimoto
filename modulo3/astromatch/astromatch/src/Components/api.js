@@ -1,67 +1,47 @@
-import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-export default function Api () {
-
-    const [profile, setProfile] = useState({});
-    const [match, setMatch] = useState({});
-    const [person, setPerson] = useState({});
-    const [clear, setClear] = useState({});
-
-    useEffect (() => {
-     
-    }, [])
-    const profilePick = async () => {
-        try {
-            const response = await axios
-            .get(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:mayara/person`)
-            setProfile(response.data)
-        } catch (error) {
-            console.log(error)
-        }
-        profilePick()
-    };
-
-    const userMatch = async () => {
-        try {
-            const response = await axios
-            .get(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:mayara/matches`)
-            setMatch(response.data)
-        } catch (error) {
-            console.log(error)
-        }
-        userMatch()
-       };
-    
-    const choosePerson = async () => {
-        const body = 
-            {   id: "71gMbZs2txS9LDvGK5Ew",
-                choice: true
-            };
-        
-        try {
-            const response = await axios
-            .post(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:mayara/choose-person`).JSON + body
-            setPerson(response.data)            
-        } catch (error){
+export const profilePick = async (setPerson) => {
+    try {
+        const response = await axios
+        .get(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/mayara/person`)
+        setPerson(response.data.profile)
+        console.log(response.data)
+    } catch (error) {
         console.log(error)
     }
-    choosePerson()
-    };
-    const clearCache = async () => {
-        try {
-            const response = await axios
-            .put(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/:mayara/clear`)
-            setClear(response.data)
-        } catch (error) {
-            console.log(error)
-        }
-        clearCache()
-    };
+};
 
-    return (
-        <div>
+export const userMatch = async (setMatch) => {
+    try {
+        const response = await axios
+        .get(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/mayara/matches`)
+        setMatch(response.data.matches)
+        console.log(response.data)
+    } catch (error) {
+        console.log(error)
+    }
+   };
 
-        </div>
-    )
+export const choosePerson = async (id, choice, setPerson) => {
+    const body = 
+        {   id: id,
+            choice: choice
+        };
+    try {
+        await axios
+        .post(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/mayara/choose-person`, body)
+        profilePick(setPerson)           
+    } catch (error){
+    console.log(error)
 }
+};
+
+export const clearCache = async () => {
+    try {
+        await axios
+        .put(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/mayara/clear`)
+    } catch (error) {
+        console.log(error)
+    }
+    clearCache()
+};
