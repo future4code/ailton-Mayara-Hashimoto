@@ -8,18 +8,17 @@ import Im from '../Assets/im.jpg'
 import Yuqi from '../Assets/yuqi.jpg'
 import Chan from '../Assets/chan.jpg'
 import BG from '../Assets/fundo.png'
+import Mail from '../Assets/mail.png'
 
 
 const MainBoxu = styled.div`
-background-color: #bda8d6;
+background-color: white;
 margin-top: 5px;
-border-radius: 10px;
 width: 400px;
-height: 600px;
+height: 610px;
 overflow: auto;
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
-  
 }
 ::-webkit-scrollbar-thumb {
   background: rgba(186, 134, 202, 0.68);
@@ -41,22 +40,22 @@ const Boxu = styled.div`
 display: flex;
 flex-direction: row;
 align-items: center;
+justify-content: space-between;
 padding: 10px;
 cursor: pointer;
 :hover {
     background-color: rgba(186, 134, 202, 0.68);
-    border-radius: 30px;
 };
 `
 const BoxuNi = styled.div`
 display: flex;
 flex-direction: row;
 align-items: center;
+justify-content: space-between;
 padding: 10px;
 cursor: pointer;
 :hover {
     background-color: rgba(186, 134, 202, 0.68);
-    border-radius: 30px;
 };
 `
 const Container = styled.div`
@@ -69,12 +68,10 @@ justify-content: center;
 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 `
 const BackButton = styled.img `
-background-color: pink;
-width: 79px;
-height: 35px;
+width: 69px;
+height: 30px;
 padding: 5px 5px;
 margin: 5px;
-border-radius: 10px;
 cursor: pointer;
 :hover {
     background-color: rgba(168, 205, 214, 0.68);
@@ -82,6 +79,15 @@ cursor: pointer;
 `
 const Logos = styled.img` 
 border-radius: 10px;
+`
+const Message = styled.img`
+width: 30px;
+height: 20px;
+`
+const ButtonDiv = styled.div`
+display: flex;
+justify-content: end;
+padding-right: 5px;
 `
 
 
@@ -97,19 +103,19 @@ export default function MatchScreen (props) {
         <Container>
         <MainBoxu>
         <Logos src={Logo}/>
-        <div>
+        <ButtonDiv>
             <BackButton src={Back} onClick={() => props.setTela("home")} />
-            </div>
+            </ButtonDiv>
             <div>
                 {match?.map((item) => {
                     return <Boxu key={item.id}>
-                       <Matcher src={item.photo}/> <p>{item.name}, {item.age}</p>
+                       <Matcher src={item.photo}/> <p>{item.name}, {item.age}</p> <Message src={Mail}/>
                     </Boxu>
                 })}
-                    <BoxuNi><Matcher src={Im}/> <p>I.M, 26</p></BoxuNi>
-                    <BoxuNi><Matcher src={Iu}/> <p>IU, 29</p></BoxuNi>
-                    <BoxuNi><Matcher src={Yuqi}/> <p>Yuqi, 22</p></BoxuNi>
-                    <BoxuNi><Matcher src={Chan}/> <p>Bang Chan, 26</p></BoxuNi>
+                    <BoxuNi><Matcher src={Im}/> <p>I.M, 26</p> <Message src={Mail}/></BoxuNi>
+                    <BoxuNi><Matcher src={Iu}/> <p>IU, 29</p> <Message src={Mail}/></BoxuNi>
+                    <BoxuNi><Matcher src={Yuqi}/> <p>Yuqi, 22</p> <Message src={Mail}/></BoxuNi>
+                    <BoxuNi><Matcher src={Chan}/> <p>Bang Chan, 26</p> <Message src={Mail}/></BoxuNi>
                
             </div>
         </MainBoxu>

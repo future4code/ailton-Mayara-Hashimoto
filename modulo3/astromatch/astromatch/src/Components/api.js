@@ -1,10 +1,12 @@
 import axios from 'axios'
 
-export const profilePick = async (setPerson) => {
+export const profilePick = async (setPerson, setLoad) => {
     try {
+        setLoad(true)
         const response = await axios
         .get(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/mayara/person`)
         setPerson(response.data.profile)
+        setLoad(false)
         console.log(response.data)
     } catch (error) {
         console.log(error)
@@ -22,7 +24,7 @@ export const userMatch = async (setMatch) => {
     }
    };
 
-export const choosePerson = async (id, choice, setPerson) => {
+export const choosePerson = async (id, choice, setPerson, setLoad) => {
     const body = 
         {   id: id,
             choice: choice
@@ -30,7 +32,7 @@ export const choosePerson = async (id, choice, setPerson) => {
     try {
         await axios
         .post(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/mayara/choose-person`, body)
-        profilePick(setPerson)           
+        profilePick(setPerson, setLoad)           
     } catch (error){
     console.log(error)
 }
