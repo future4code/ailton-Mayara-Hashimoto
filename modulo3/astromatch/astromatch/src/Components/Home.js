@@ -4,8 +4,10 @@ import Exu from '../Assets/exu.png'
 import Firey from '../Assets/fire.png'
 import Hatu from '../Assets/hatu.png'
 import Clear from '../Assets/clear.png'
-import Logo from '../Assets/match.jpg'
+import Logo from '../Assets/logo.png'
+import BG from '../Assets/fundo.png'
 import styled from 'styled-components';
+
 
 const ExuButton = styled.img`
 width: 35px;
@@ -24,7 +26,7 @@ flex-direction: column;
 justify-content: end;
 background-image: url(${(props) => props.photo});
 background-size: cover;
-background-position: center;
+background-position: ${(props) => props.joke === "Joker"? "center top left" : "center top"};
 border-radius: 10px;
 width: 350px;
 height: 450px;
@@ -48,6 +50,7 @@ padding-left: 10px;
 `
 const MainBoxu = styled.div`
 background-color: #bda8d6;
+margin-top: 5px;
 border-radius: 10px;
 width: 400px;
 height: 600px;
@@ -83,14 +86,18 @@ cursor: pointer;
 }
 `
 const Infires = styled.img`
-height: 15px;
+height: 33px;
+width: 93px;
 `
 const ButtonBox = styled.div `
 display: flex;
-justify-content: space-between;
+justify-content: space-evenly;
 `
 const Container = styled.div`
-margin-top: 5px;
+background-image: url(${BG});
+background-position: center;
+background-size: cover;
+height: 100vh;
 display: flex;
 justify-content: center;
 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -112,10 +119,10 @@ export default function Home(props) {
     <MainBoxu>
     <Logos src={Logo}/>
     <ButtonBox>
-      <MatchButton onClick={() => props.setTela("match")}>Matches<Infires src={Firey}/></MatchButton>
-      <ClearButton onClick={clearCache}>Clear Cache <Infires src={Clear}/></ClearButton>
+      <MatchButton onClick={() => props.setTela("match")}><Infires src={Firey}/></MatchButton>
+      <ClearButton onClick={clearCache}> <Infires src={Clear}/></ClearButton>
       </ButtonBox>
-      {person && <Boxu photo={person.photo}>
+      {person && <Boxu photo={person.photo} joker={person.name}>
       <InfoBoxu>
         <Bold>{person.name}, {person.age}</Bold>
         <p>{person.bio}</p>
