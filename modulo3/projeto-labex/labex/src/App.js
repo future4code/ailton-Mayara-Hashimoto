@@ -16,7 +16,7 @@ justify-content: center;
 `
 
 function App() {
-  const [screen, setScreen] = useState("list")
+  const [screen, setScreen] = useState("jointrip")
   return (
 
     <Container>

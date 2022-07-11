@@ -71,3 +71,18 @@ overflow: auto;
   width: 7px;
 }
 `
+export const InputBox = styled.div`
+display: flex;
+flex-direction: column;
+gap: 10px;
+padding: 50px;
+`
+
+export const Inputs = styled.input`
+width: 400px;
+height: 30px;
+`
+export const Selects = styled.select`
+width: 400px;
+height: 30px;
+`

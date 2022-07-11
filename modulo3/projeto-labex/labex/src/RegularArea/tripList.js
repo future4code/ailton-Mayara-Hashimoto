@@ -8,6 +8,7 @@ height: 100vh;
 display: flex;
 flex-direction: column;
 flex-grow: 1;
+color: white;
 `
 
 export default function TripsList() {
@@ -21,90 +22,7 @@ export default function TripsList() {
        <Button>Join A Trip</Button>
        </ButtonList>
       <MegaBox>
-        <CardBox>
-          <p>Trip Theme: Arknights</p>
-          <p>Description: Taking you to the most amazing, and famous, battlefields in the universe.</p>
-          <p>Planet: Undefined</p>
-          <p>Duration: 50 light years</p>
-          <p>Date: 2023 - 12 - 25</p>
-        </CardBox>
-        <CardBox>
-          <p>Trip Theme: Arknights</p>
-          <p>Description: Taking you to the most amazing, and famous, battlefields in the universe.</p>
-          <p>Planet: Undefined</p>
-          <p>Duration: 50 light years</p>
-          <p>Date: 2023 - 12 - 25</p>
-        </CardBox>
-        <CardBox>
-          <p>Trip Theme: Arknights</p>
-          <p>Description: Taking you to the most amazing, and famous, battlefields in the universe.</p>
-          <p>Planet: Undefined</p>
-          <p>Duration: 50 light years</p>
-          <p>Date: 2023 - 12 - 25</p>
-        </CardBox>
-        <CardBox>
-          <p>Trip Theme: Arknights</p>
-          <p>Description: Taking you to the most amazing, and famous, battlefields in the universe.</p>
-          <p>Planet: Undefined</p>
-          <p>Duration: 50 light years</p>
-          <p>Date: 2023 - 12 - 25</p>
-        </CardBox>
-        <CardBox>
-          <p>Trip Theme: Arknights</p>
-          <p>Description: Taking you to the most amazing, and famous, battlefields in the universe.</p>
-          <p>Planet: Undefined</p>
-          <p>Duration: 50 light years</p>
-          <p>Date: 2023 - 12 - 25</p>
-        </CardBox>
-        <CardBox>
-          <p>Trip Theme: Arknights</p>
-          <p>Description: Taking you to the most amazing, and famous, battlefields in the universe.</p>
-          <p>Planet: Undefined</p>
-          <p>Duration: 50 light years</p>
-          <p>Date: 2023 - 12 - 25</p>
-        </CardBox>
-        <CardBox>
-          <p>Trip Theme: Arknights</p>
-          <p>Description: Taking you to the most amazing, and famous, battlefields in the universe.</p>
-          <p>Planet: Undefined</p>
-          <p>Duration: 50 light years</p>
-          <p>Date: 2023 - 12 - 25</p>
-        </CardBox>
-        <CardBox>
-          <p>Trip Theme: Arknights</p>
-          <p>Description: Taking you to the most amazing, and famous, battlefields in the universe.</p>
-          <p>Planet: Undefined</p>
-          <p>Duration: 50 light years</p>
-          <p>Date: 2023 - 12 - 25</p>
-        </CardBox>
-        <CardBox>
-          <p>Trip Theme: Arknights</p>
-          <p>Description: Taking you to the most amazing, and famous, battlefields in the universe.</p>
-          <p>Planet: Undefined</p>
-          <p>Duration: 50 light years</p>
-          <p>Date: 2023 - 12 - 25</p>
-        </CardBox>
-        <CardBox>
-          <p>Trip Theme: Arknights</p>
-          <p>Description: Taking you to the most amazing, and famous, battlefields in the universe.</p>
-          <p>Planet: Undefined</p>
-          <p>Duration: 50 light years</p>
-          <p>Date: 2023 - 12 - 25</p>
-        </CardBox>
-        <CardBox>
-          <p>Trip Theme: Arknights</p>
-          <p>Description: Taking you to the most amazing, and famous, battlefields in the universe.</p>
-          <p>Planet: Undefined</p>
-          <p>Duration: 50 light years</p>
-          <p>Date: 2023 - 12 - 25</p>
-        </CardBox>
-        <CardBox>
-          <p>Trip Theme: Arknights</p>
-          <p>Description: Taking you to the most amazing, and famous, battlefields in the universe.</p>
-          <p>Planet: Undefined</p>
-          <p>Duration: 50 light years</p>
-          <p>Date: 2023 - 12 - 25</p>
-        </CardBox>
+       <p><CardBox>Cards Ficarão Aqui</CardBox> </p>
         </MegaBox>
     </Container>
   )
