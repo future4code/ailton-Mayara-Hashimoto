@@ -1,13 +1,25 @@
-import React, { useState } from 'react'
-
-
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import { goBack, goAdmn } from '../Routes/Coordinator'
+import Homes from '../Assets/home.gif'
+import { ButtonBox, Image, Button } from '../RegularArea/styledRegular';
+import { LoginBox, Box, InputLog } from './styledAdm'
 export default function LogIn() {
-    const [screen, setScreen] = useState("login")
+    const navigate = useNavigate()
   return (
-    <div>
-        <input placeholder='email'/>
-        <input placeholder='password'/>
+  
+    <Box>
+<Image src={Homes}/>
+<LoginBox>
+    <InputLog placeholder='email'/>
+    <InputLog placeholder='password'/>
+  </LoginBox>
+<ButtonBox>
+    <Button onClick={() => goBack(navigate)}>Cancelar</Button>
+    <Button onClick={() => goAdmn(navigate)}>Enviar</Button>
+ </ButtonBox>
+ </Box> 
     
-    </div>
+  
   )
 }

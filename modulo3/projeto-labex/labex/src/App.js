@@ -1,10 +1,8 @@
-import React, {useState} from "react";
+import React from "react";
 import funds from './Assets/funds.png'
-import Homes from './Assets/home.gif'
 import styled from "styled-components";
-import {Box, ButtonBox, Image, Button} from './RegularArea/styledRegular'
-import TripsList from "./RegularArea/tripList";
-import JoinTrip from "./RegularArea/jointrip";
+import { Router } from "./Routes/Router";
+
 
 const Container = styled.div`
 background-image: url(${funds});
@@ -16,21 +14,10 @@ justify-content: center;
 `
 
 function App() {
-  const [screen, setScreen] = useState("jointrip")
   return (
 
     <Container>
-      {screen === "home" && 
-<Box>
-<Image src={Homes}/>
-<ButtonBox>
- <Button>Check Trips</Button>
- <Button>LogIn</Button>
- </ButtonBox>
- </Box> }
- {screen === "list" && <TripsList/>}
- {screen === "jointrip" && <JoinTrip/>}
-
+ <Router/>
     </Container>
   );
 }
