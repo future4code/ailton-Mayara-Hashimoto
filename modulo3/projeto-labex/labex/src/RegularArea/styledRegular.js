@@ -52,6 +52,7 @@ background-color: rgba(249, 251, 239, 0.57);
 display: flex;
 flex-direction: column;
 margin: 20px;
+padding: 5px;
 `
 export const MegaBox = styled.div`
 display: flex;

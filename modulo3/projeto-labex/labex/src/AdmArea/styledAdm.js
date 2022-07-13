@@ -31,6 +31,19 @@ display: flex;
 flex-direction: column;
 flex-grow: 1;
 color: white;
+overflow: auto;
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(207, 210, 15, 0.62);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(15, 207, 210, 0.6);
+}
+::-webkit-scrollbar-track {
+  background: #0000;
+}
+::-webkit-scrollbar {
+  width: 7px;
+}
 `
 export const Painel = styled.div`
 display: flex;
@@ -68,6 +81,19 @@ height: 50px;
 :Hover{
         background-color: rgba(211, 202, 100, 0.64);
     }
+    overflow: auto;
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(207, 210, 15, 0.62);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(15, 207, 210, 0.6);
+}
+::-webkit-scrollbar-track {
+  background: #0000;
+}
+::-webkit-scrollbar {
+  width: 7px;
+}
 `
 export const InputBox = styled.div`
 margin-top: 40px;
@@ -102,6 +128,38 @@ justify-content: space-around;
 align-items: center;
 word-break: break-all;
 word-wrap: break-word;
+`
+export const ContainerDetail = styled.div`
+margin-top: 100px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+`
+export const Footer = styled.div`
+background-color: rgba(6, 13, 3, 0.8);
+color: black;
+text-decoration: none;
+
+`
+export const BoxCandidate = styled.div`
+display: flex;
+flex-direction: column;
+`
+export const DetailStyle = styled.div`
+display: flex;
+flex-direction: column;
+padding: 10px;
+`
+export const DetailButton = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+margin: 5px;
+`
+export const CandidateStyle = styled.div`
+display: flex;
+flex-direction: column;
+padding: 10px;
 overflow: auto;
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(207, 210, 15, 0.62);
@@ -115,16 +173,4 @@ overflow: auto;
 ::-webkit-scrollbar {
   width: 7px;
 }
-`
-export const ContainerDetail = styled.div`
-margin-top: 100px;
-display: flex;
-flex-wrap: wrap;
-justify-content: space-around;
-`
-export const Footer = styled.div`
-background-color: rgba(6, 13, 3, 0.8);
-color: black;
-text-decoration: none;
-
 `

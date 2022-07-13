@@ -6,7 +6,7 @@ import LogIn from '../AdmArea/logIn'
 import AdminPage from '../AdmArea/adminPage'
 import CreateTrips from '../AdmArea/CreateTrip'
 import DetailsPage from '../AdmArea/DetailsPage'
-import ErrorPage from '../Components/ErrorPage'
+
 
 export const Router = () => {
     return (
@@ -18,8 +18,8 @@ export const Router = () => {
             <Route path="login/" element={<LogIn/>}/>
             <Route path="admin/" element={<AdminPage/>}/>
             <Route path="admin/create-trips/" element={<CreateTrips/>}/>
-            <Route path="admin/details/" element={<DetailsPage/>}/>
-            <Route path="*" element={<ErrorPage/>}/>
+            <Route path="admin/details/:id" element={<DetailsPage/>}/>
+          
         </Routes>
         </BrowserRouter>
     )
