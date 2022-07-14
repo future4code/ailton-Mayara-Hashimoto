@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import navis from '../Assets/navis.jpg'
-import {Button, ButtonList, TripHeader, CardBox, MegaBox} from './styledRegular'
+import {Button, ButtonList, TripHeader, CardBox, MegaBox, Tittle} from './styledRegular'
 import { useNavigate } from 'react-router-dom'
 import { goOut, goJoin } from '../Routes/Coordinator'
 
@@ -21,26 +21,19 @@ export default function TripsList() {
     const token = localStorage.getItem("token");
   
     const tripList = async () => {
-      try {
-        const res = await axios
+      try { const res = await axios
         .get("https://us-central1-labenu-apis.cloudfunctions.net/labeX/mayara-hashimoto-ailton/trips", {
-          headers: {
-            auth: token
-          }
+          headers: { auth: token }
         })
-        console.log(res.data)
         setList(res.data.trips)
-      } catch (error) {
-        alert("Algo Deu Errado")
-        console.log(error)
-      }
+      } catch (error) { alert("Algo Deu Errado") }
     } 
     tripList()
   }, []);
   console.log(list)
    const Cards = list.map((item) => { 
     return <CardBox key={item.id}> 
-    <center><p>{item.name}</p></center>
+    <center><Tittle>{item.name}</Tittle></center>
     <p>Descrição: {item.description}</p>
     <p>Planeta: {item.planet}</p>
     <p>Duração:{item.durationInDays}</p>
@@ -50,9 +43,7 @@ export default function TripsList() {
   
   return (
     <Container>
-      <TripHeader>
-       <img src={navis}/>
-       </TripHeader>
+      <TripHeader> <img src={navis}/> </TripHeader>
        <ButtonList>
        <Button onClick={() => goOut(navigate)}>Voltar</Button>
        <Button onClick={() => goJoin(navigate)}>Viaje Conosco</Button>

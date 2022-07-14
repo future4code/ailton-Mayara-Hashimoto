@@ -9,13 +9,12 @@ opacity: 100%;
 
 export const Box = styled.div`
 width: 50vh;
-height: 50vh;
+height: 60vh;
 background-color: rgba(255, 255, 255, 0.49);
 margin-top: 25vh;
 display: flex;
 flex-direction: column;
-gap: 90px;
-
+gap: 50px;
 `
 export const ButtonBox = styled.div`
 display: flex;
@@ -45,6 +44,7 @@ height: 54px;
 export const ButtonList = styled.div`
 display: flex;
 justify-content: space-around;
+padding: 10px;
 `
 export const CardBox = styled.div`
 width: 300px;
@@ -53,6 +53,19 @@ display: flex;
 flex-direction: column;
 margin: 20px;
 padding: 5px;
+overflow: auto;
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(207, 210, 15, 0.62);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(15, 207, 210, 0.6);
+}
+::-webkit-scrollbar-track {
+  background: #0000;
+}
+::-webkit-scrollbar {
+  width: 7px;
+}
 `
 export const MegaBox = styled.div`
 display: flex;
@@ -72,7 +85,7 @@ overflow: auto;
   width: 7px;
 }
 `
-export const InputBox = styled.div`
+export const InputBox = styled.form`
 display: flex;
 flex-direction: column;
 gap: 10px;
@@ -86,4 +99,23 @@ height: 30px;
 export const Selects = styled.select`
 width: 400px;
 height: 30px;
+`
+export const Tittle = styled.p`
+font-weight: bold;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+`
+export const Phrase = styled.div`
+font-size: small;
+font-style: italic;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+` 
+export const LinkStyle = styled.a`
+text-decoration: none;
+color: #212529;
+`
+export const StyleP = styled.p`
+color: #212529;
 `

@@ -7,52 +7,39 @@ import { TripHeader } from '../RegularArea/styledRegular'
 import axios from 'axios'
 
 export default function DetailsPage() {
+
   const [trip, setTrip] = useState({})
   const navigate = useNavigate()
   const params = useParams()
   useEffect(() => {
     const token = localStorage.getItem("token"); 
-    if (!token) {
-      goLogin(navigate);
-    };
+    if (!token) { goLogin(navigate); };
     const details = async () => {
-      try {
-        const res = await axios
+      try { const res = await axios
         .get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/mayara-hashimoto-ailton/trip/${params.id}`, {
-          headers: {
-            auth: token
-          }
-        })
+          headers: { auth: token } })
         setTrip(res.data.trip)
-        console.log(res.data)
-      } catch (error) {
-        console.log(error)
-      }
+      } catch (error) { console.log(error) }
     }
     details()
   }, [])
  const approved = async (id, decision) => {
   const token = localStorage.getItem("token"); 
   const body = {approve : decision}
-  try {
-    const res = await axios
+  try { const res = await axios
     .put(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/mayara-hashimoto-ailton/trips/${params.id}/candidates/${id}/decide`, body, {
-      headers: {
-        auth: token
-      }
+      headers: { auth: token }
     })
-  } catch (error) {
-    console.log(error)
-  }
+  } catch (error) { console.log(error) }
  }
  const candidate = trip.candidates?.map((item) => {
     return <BoxCandidate key={item.id}>
-      <p>{item.name}</p>
-      <p>{item.age}</p>
-      <p>{item.profession}</p>
-      <p>{item.applicationText}</p>
+      <p>Nome: {item.name}</p>
+      <p>Idade:{item.age}</p>
+      <p>Profissão: {item.profession}</p>
+      <p>Motivo: {item.applicationText}</p>
       <DetailButton>
-      <Button onClick={() => approved(item.id, true)}>Aprovado</Button>
+      <Button onClick={() => approved(item.id, true)}>Aprovar</Button>
       <Button onClick={() => approved(item.id, false)}>Ignorar</Button>
     </DetailButton>
     </BoxCandidate>
@@ -65,12 +52,12 @@ export default function DetailsPage() {
 
   return (
     <Container>
-       <TripHeader>
-        <img src={navis}/>
-       </TripHeader>
+       <TripHeader> <img src={navis}/> </TripHeader>
        <ContainerDetail>
     <DetailBox>
+      <div>
     <h3>Descrição da Viagem</h3>
+    </div>
     <div>
         <DetailStyle> 
     <p>Planeta: {trip.planet}</p>
@@ -80,29 +67,19 @@ export default function DetailsPage() {
     <p>Descrição: {trip.description}</p>
     </DetailStyle>
     </div>
-  
+    <div>
        <Button onClick={() => goBack(navigate)}>Voltar</Button>
-    </DetailBox>
-    
-    <DetailBox>
-      <div>
-        <h3>Interessados</h3> 
-      </div>
-     
-     <CandidateStyle>
-    {candidate}
-    
-     </CandidateStyle>
-  
+       </div>
     </DetailBox>
     <DetailBox>
-      <h3>Participantes</h3>
-      <div>
-  {approveds}
-      </div>
+      <div> <h3>Interessados</h3> </div>
+     <CandidateStyle> {candidate} </CandidateStyle>
+    </DetailBox>
+    <DetailBox>
+    <div> <h3>Participantes</h3> </div>
+      <CandidateStyle>  {approveds}  </CandidateStyle>
     </DetailBox>
     </ContainerDetail>
-
     </Container>
   )
 }

@@ -16,8 +16,6 @@ export default function LogIn() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
-
     const onChangeEmail = (event) => {
       setEmail(event.target.value)
     };
@@ -26,9 +24,7 @@ export default function LogIn() {
     }
 useEffect(() => {
   const token = localStorage.getItem("token")
-  if (token) {
-    goAdmn(navigate)
-  }
+  if (token) { goAdmn(navigate) }
 },[])
     const onLogin = async () => {
      try {
@@ -38,15 +34,11 @@ useEffect(() => {
       };
      const response = await axios
       .post("https://us-central1-labenu-apis.cloudfunctions.net/labeX/mayara-hashimoto-ailton/login", body)
-        console.log("logou", response.data.token)
         localStorage.setItem("token", response.data.token)
       goAdmn(navigate)
     }
-      catch (error) {
-        alert("Usuário Inválido.", error.response)
-      }
-    };
-
+      catch (error) { alert("Usuário Inválido.", error.response) }
+    }; 
   return (
   
     <Box>

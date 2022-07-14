@@ -50,6 +50,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+margin-top: 30px;
 padding-top: 30px;
 overflow: auto;
 ::-webkit-scrollbar-thumb:hover {
@@ -66,8 +67,11 @@ overflow: auto;
 }
 `
 
-export const Hum = styled.h1`
-position: relative;
+export const Hum = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 10px;
 `
 
 export const BoxList = styled.div`
@@ -95,7 +99,7 @@ height: 50px;
   width: 7px;
 }
 `
-export const InputBox = styled.div`
+export const InputBox = styled.form`
 margin-top: 40px;
 display: flex;
 flex-direction: column;
@@ -134,6 +138,19 @@ margin-top: 100px;
 display: flex;
 flex-wrap: wrap;
 justify-content: space-around;
+overflow: auto;
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(207, 210, 15, 0.62);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(15, 207, 210, 0.6);
+}
+::-webkit-scrollbar-track {
+  background: #0000;
+}
+::-webkit-scrollbar {
+  width: 7px;
+}
 `
 export const Footer = styled.div`
 background-color: rgba(6, 13, 3, 0.8);
@@ -149,6 +166,19 @@ export const DetailStyle = styled.div`
 display: flex;
 flex-direction: column;
 padding: 10px;
+overflow: auto;
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(207, 210, 15, 0.62);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(15, 207, 210, 0.6);
+}
+::-webkit-scrollbar-track {
+  background: #0000;
+}
+::-webkit-scrollbar {
+  width: 7px;
+}
 `
 export const DetailButton = styled.div`
 display: flex;
@@ -173,4 +203,25 @@ overflow: auto;
 ::-webkit-scrollbar {
   width: 7px;
 }
+`
+export const ButtonDel = styled.button`
+background-color: rgba(134, 190, 223, 0.51);
+width: 25px;
+height: 25px;
+margin-right: 25px;
+margin-top: 40px;
+border-radius: 50px;
+border: none;
+cursor: pointer;
+    :Hover{
+        background-color: rgba(158, 141, 160, 0.88);
+    }
+    p{
+      font-weight: bold;
+    }
+`
+export const BoxRow = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
 `
