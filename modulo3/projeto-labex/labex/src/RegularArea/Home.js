@@ -20,7 +20,7 @@ export default function Home () {
  </ButtonBox>
  <div>
     <StyleP>
-    Projeto criado por: Mayara Costa | <LinkStyle target="_blank" href="https://github.com/aonosorah">GitHub</LinkStyle>
+    Projeto criado por Mayara Costa : <LinkStyle target="_blank" href="https://github.com/aonosorah">GitHub</LinkStyle>
     </StyleP>
  </div>
  </Box> 

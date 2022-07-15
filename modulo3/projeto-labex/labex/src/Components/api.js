@@ -5,9 +5,9 @@ export const ApplyToTrip = (body) => {
     try {
         axios
         .post(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/mayara-hashimoto-ailton/trips/${body.trip}/apply`, body)
-        console.log("recebido")
+
     } catch (error) {
-        console.log(error)
+      alert("Ops. Por favor verifique")
     }
 }
 
@@ -17,11 +17,10 @@ export const TripList = async () => {
       .get("https://us-central1-labenu-apis.cloudfunctions.net/labeX/mayara-hashimoto-ailton/trips", {
         headers: { auth: token }
       })
-      console.log(res.data)
       return res.data.trips
     } catch (error) {
-      alert("Algo Deu Errado")
-      console.log(error)
+      alert("Estamos verificando o ocorrido, por favor, tente novamente.")
+
     }
   } 
 export const CreateTrips = async (body) => {
@@ -31,8 +30,8 @@ export const CreateTrips = async (body) => {
         headers: { auth: token }
     })
     alert("Viagem criada com Sucesso!")
-    console.log(res.data)
     } catch (error) {
+      alert("Estamos verificando o ocorrido, por favor, tente novamente.")
     }
 };
 export const DeleteTrips = async (id) => {

@@ -19,7 +19,6 @@ export default function CreateTrip() {
   const create = (event) => {
     CreateTrips(form)
     event.preventDefault()
-    console.log(form)
     cleanFields()
   };
 

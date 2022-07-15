@@ -59,10 +59,14 @@ getTrips()
         <Inputs placeholder='Profissão' name={"profession"} value={form.profession} onChange={onChange} required/>
         <Selects onChange={onChange} name="country" value={form.country} required>
           <option>País de Origem</option>
+          <option>Alemanhã</option>
+          <option>Africa</option>
           <option>Brasil</option>
           <option>Coreia do Sul</option>
-          <option>Alemanhã</option>
+          <option>México</option>
+          <option>Reino Unido</option>
           <option>USA</option>
+          
         </Selects>
        
         <ButtonBox>

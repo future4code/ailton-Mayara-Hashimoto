@@ -26,7 +26,8 @@ useEffect(() => {
   const token = localStorage.getItem("token")
   if (token) { goAdmn(navigate) }
 },[])
-    const onLogin = async () => {
+    const onLogin = async (event) => {
+      event.preventDefault()
      try {
       const body = {
         email: email,
@@ -43,7 +44,7 @@ useEffect(() => {
   
     <Box>
 <Image src={Homes}/>
-<LoginBox>
+<LoginBox onSubmit={onLogin}>
     <InputLog placeholder="email"
               type="email" onChange={onChangeEmail}
               value={email}/>
@@ -51,11 +52,11 @@ useEffect(() => {
               type="password" onChange={onChangePass}
               value={password}
     />
-  </LoginBox>
 <ButtonBox>
     <Button onClick={() => goOut(navigate)}>Cancelar</Button>
-    <Button onClick={onLogin}>Enviar</Button>
- </ButtonBox>
+    <Button>Enviar</Button>
+ </ButtonBox> 
+ </LoginBox>
  </Box> 
     
   

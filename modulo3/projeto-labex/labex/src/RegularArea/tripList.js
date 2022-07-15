@@ -30,7 +30,6 @@ export default function TripsList() {
     } 
     tripList()
   }, []);
-  console.log(list)
    const Cards = list.map((item) => { 
     return <CardBox key={item.id}> 
     <center><Tittle>{item.name}</Tittle></center>

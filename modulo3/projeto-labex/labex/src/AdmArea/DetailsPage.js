@@ -19,7 +19,7 @@ export default function DetailsPage() {
         .get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/mayara-hashimoto-ailton/trip/${params.id}`, {
           headers: { auth: token } })
         setTrip(res.data.trip)
-      } catch (error) { console.log(error) }
+      } catch (error) { alert("Localizamos um erro. Por favor, tente novamente") }
     }
     details()
   }, [])
@@ -30,7 +30,7 @@ export default function DetailsPage() {
     .put(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/mayara-hashimoto-ailton/trips/${params.id}/candidates/${id}/decide`, body, {
       headers: { auth: token }
     })
-  } catch (error) { console.log(error) }
+  } catch (error) { alert("Localizamos um erro. Por favor, tente novamente") }
  }
  const candidate = trip.candidates?.map((item) => {
     return <BoxCandidate key={item.id}>
