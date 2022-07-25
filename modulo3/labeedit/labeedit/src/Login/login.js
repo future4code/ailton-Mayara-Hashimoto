@@ -13,8 +13,8 @@ export default function Login() {
       <StyledP>O projeto de rede social da Labenu</StyledP>
      <DivForm>
        <Forms>
-        <Inputs placeholder='Name'/>
-        <Inputs placeholder='Password'/>
+        <Inputs placeholder='Name' required/>
+        <Inputs placeholder='Password' required/>
         <ButtonEnter>Continuar</ButtonEnter>
        </Forms>
      </DivForm>
