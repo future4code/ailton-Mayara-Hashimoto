@@ -11,7 +11,7 @@ export const Router = () => {
                 <Route index element={<Login/>}/>
                 <Route path="login/" element={<Login/>}/>
                 <Route path="feed/" element={<Feed/>}/>
-                <Route path="posts" element={<Post/>}/>
+                <Route path="posts/:id" element={<Post/>}/>
                 <Route path="signup/" element={<Signup/>}/>
             </Routes>
         </BrowserRouter>

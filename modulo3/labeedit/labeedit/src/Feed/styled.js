@@ -52,7 +52,7 @@ font-weight: 600;
 font-size: 18px;
 line-height: 25px;
 `
-export const DivPost = styled.div`
+export const DivPost = styled.form`
 display: flex;
 flex-direction: column;
 flex-wrap: wrap;
@@ -78,7 +78,23 @@ export const Input = styled.textarea`
 height: 131px;
 margin-left: 33px;
 margin-right: 30px;
+margin-top: 12px;
+font-family: 'IBM Plex Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 23px;
+padding-left: 17px;
+padding-top: 15px;
+border-radius: 12px;
+border: none;
+background-color: #E0E0E0;
+`
+export const InputTitle = styled.textarea`
+margin-left: 33px;
+margin-right: 30px;
 margin-top: 34px;
+height: 70px;
 font-family: 'IBM Plex Sans';
 font-style: normal;
 font-weight: 400;

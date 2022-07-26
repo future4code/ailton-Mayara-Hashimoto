@@ -45,10 +45,10 @@ background-color: #A8BBC6;
 border-radius: 0 0 100px 0;
 `
 export const StyledP = styled.p`
-font-family: "Noto Sans";
+font-family: 'IBM Plex Sans';
 color: #4088CB;
 font-style: normal;
-font-weight: 600;
+font-weight: 700;
 font-size: 18px;
 line-height: 25px;
 `
@@ -162,4 +162,8 @@ font-size: 9.56098px;
 line-height: 12px;
 text-align: center;
 color: #6F6F6F;
+`
+export const Ximg = styled.img`
+width: 23.93px;
+height: 23.93px;
 `

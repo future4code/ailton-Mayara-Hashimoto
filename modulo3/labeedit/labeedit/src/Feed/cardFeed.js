@@ -4,16 +4,21 @@ import  Like  from '../Assets/like.png'
 import  Unlike  from '../Assets/unlike.png'
 import { DivImages, PostSender, PostText, DivPosts, Resize,
          BoxVotes, ResizeComment, Numbers } from './styled'
+import { goPost } from '../Routes/Coordinator'
+import { useNavigate } from 'react-router-dom'
 
-export default function Card() {
+export default function Card({item}) {
+    const navigate = useNavigate()
+
   return (
     <div>
-    <DivPosts>
-    <PostSender>Enviado por: Usuario</PostSender>
-    <PostText>Texto do post; This is a random text to check if the word break all is working propely</PostText>
+    <DivPosts onClick={() => goPost(navigate, item.id)}>
+    <PostSender>Enviado por: {item.username}</PostSender>
+    <PostText>{item.title}</PostText>
+    <PostText>{item.body}</PostText>
     <DivImages>
-      <BoxVotes><Resize src={Like}/><Numbers>12</Numbers> <Resize src={Unlike}/><Numbers>0</Numbers></BoxVotes> 
-      <BoxVotes><ResizeComment scr={Comment}/><Numbers>232</Numbers></BoxVotes> 
+      <BoxVotes><Resize src={Like}/><Numbers>{item.voteSum}</Numbers> <Resize src={Unlike}/></BoxVotes> 
+      <BoxVotes><ResizeComment scr={Comment}/><Numbers>{item.commentCount}</Numbers></BoxVotes> 
     </DivImages>
   </DivPosts>
     </div>

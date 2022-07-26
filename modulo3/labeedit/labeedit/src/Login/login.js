@@ -9,15 +9,13 @@ import { goFeed, goSignup } from '../Routes/Coordinator'
 export default function Login() {
     const navigate = useNavigate()
     const { form, onChange, clearForm } = useForm({email: "", password: ""})
-    const onLogin = (event) =>{
+    const onLogin = async (event) =>{
       event.preventDefault()
-      const res = LogMeIn(form)
-      localStorage.setItem("token", res.token)
+      await LogMeIn(form)
       clearForm()
       goFeed(navigate)
     };
 
-    
   return (
     <Container>
     <BoxLogo>
