@@ -87,6 +87,8 @@ line-height: 23px;
 padding-left: 17px;
 padding-top: 15px;
 border-radius: 12px;
+border: none;
+background-color: #E0E0E0;
 `
 export const DivLine = styled.div`
 margin-right:31px;
@@ -125,6 +127,7 @@ export const PostText =  styled.p`
 font-family: 'IBM Plex Sans';
 font-style: normal;
 margin-top: 18px;
+margin-right: 19px;
 font-weight: 400;
 font-size: 18px;
 line-height: 23px;
