@@ -9,6 +9,7 @@ export const Router = () => {
         <BrowserRouter>
             <Routes>
                 <Route index element={<Login/>}/>
+                <Route path="login/" element={<Login/>}/>
                 <Route path="feed/" element={<Feed/>}/>
                 <Route path="posts" element={<Post/>}/>
                 <Route path="signup/" element={<Signup/>}/>
