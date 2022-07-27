@@ -1,0 +1,24 @@
+import React, { useState, useEffect } from 'react'
+import { GetPost } from './api'
+import { GlobalContext } from './GlobalContext'
+ 
+
+
+export default function GlobalState(props) {
+    const [ list, setList ] = useState("");
+    const [ page, setPage ] = useState(1);
+    const [ comment, setComment] = useState("");
+    const [counter, setCounter] = useState(0)
+
+    useEffect (() => {
+        const postData = async () => {
+            const listData = await GetPost(`posts?page=${page}&size=20`);
+            setList(listData) }
+        postData()
+    }, [counter])
+    const values = {list, page, setPage, comment, setComment, counter, setCounter }
+    const Provider = GlobalContext.Provider
+  return ( 
+        <Provider value={values}>{props.children}</Provider>
+  )
+}

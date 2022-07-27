@@ -1,31 +1,23 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Header, BoxLogo, Color1, Color2, Color3, Color4, StyledP, ButtonEnter,
          DivPost, Input, DivLine, InputTitle } from './styled'
 import { useNavigate } from 'react-router-dom'
 import { goLogin } from '../Routes/Coordinator'
 import Card from './cardFeed'
-import { GetPost, CreatePost } from '../Components/api'
+import { CreatePost } from '../Components/api'
 import { useForm } from '../Components/hooks'
+import { GlobalContext } from '../Components/GlobalContext'
 
 export default function Feed() {
-  const [counter, setCounter] = useState(0)
   const navigate = useNavigate()
-  const [list, setList] = useState("")
   const { form, onChange, clearForm } = useForm({title: "", body:""})
-
+  const { list, setCounter } = useContext(GlobalContext)
     const onPost = async (event) => {
       event.preventDefault()
       await CreatePost(form)
       clearForm()
       setCounter()
-    };
-  useEffect (() => {
-    const listPosts = async () => {
-      const postList = await GetPost()
-      setList(postList)
-    };
-      listPosts()
-  },[counter]) 
+    }; 
 
   return (
     <div>

@@ -12,23 +12,23 @@ export const SignMeUp = async (body) => {
     }
 };
 
-export const GetPost = async () => {
+export const GetPost = async (path) => {
     const token = localStorage.getItem("token");
-    console.log(token)
     try { const res = await axios
-        .get(`${baseUrl}/posts`, {
+        .get(`${baseUrl}/${path}`, {
             headers: { authorization: token }
         })
         return res
     } catch (error) { alert("Ops, algo deu errado, tente novamente") }
 };
-export const GetComments = async (id) => {
+export const GetComments = async (id, setData) => {
     const token = localStorage.getItem("token");
     try { const res = await axios
         .get(`${baseUrl}/posts/${id}/comments`, {
             headers: { authorization: token }
         })
         console.log(res)
+        setData(res.data)
     } catch (error) {
         console.log(error)
     }
@@ -53,13 +53,11 @@ export const CreatePost = async (body) => {
 export const CreateComment = async (body, id) => {
     const token = localStorage.getItem("token");
     try { const res = await axios
-        .post(`${baseUrl}/post/${id}/coments`, body, 
+        .post(`${baseUrl}/posts/${id}/comments`, body, 
         { headers: {authorization: token} })
         alert("Comentário adicionado com sucesso")
-        console.log(res)
     } catch (error) {
         alert("Algo deu errado, por favor, tente novamente")
-        console.log(error)
     }
 };
 export const PostVote = async (id) => {
