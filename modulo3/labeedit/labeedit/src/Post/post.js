@@ -23,17 +23,25 @@ export default function Post() {
     // setCounter()
   }; 
   let postContent 
+  
   if (list) {
     postContent = list.data.filter((item) => {return item.id === params.id})
-    console.log(list)
-    console.log(postContent)
-  }
+  };
+
  useEffect (() => {
+    if (postContent && !commentu) {
     const getComment = async () => {
-         await GetComments(params.id, setCommentu)
-    }
-    getComment()
- }, [postContent])
+      await GetComments(params.id, setCommentu)
+ }
+ getComment()
+  };
+ }, [postContent]);
+
+
+ 
+
+ console.log(commentu);
+
   return (
     <div>
         <Header><Ximg src={X} onClick={() => goFeed(navigate)}/>
@@ -41,20 +49,25 @@ export default function Post() {
   <Color1/> <Color3/>
   <Color2/> <Color4/>
   </BoxLogo>
-  <StyledP onClick={() => goLogin(navigate)}>Logout</StyledP>
+  <StyledP onClick={() => {goLogin(navigate) 
+            localStorage.setItem("token", "")} }>Logout</StyledP>
   </Header>
+  { !commentu&& <p>LOADING!</p>}
+  { commentu && 
+    <>
       <DivPost>
-        {postContent && <Card item={postContent[0]}/>}
+        { postContent && <Card item={postContent[0]}/> }
         <Input name={"body"} value={form.body} onChange={onChange} placeholder='Deixe seu comentário...'/>
         <ButtonEnter onClick={onComment}>Responder</ButtonEnter>
         <DivLine></DivLine>
         </DivPost>
         <div>
-        { commentu && commentu.data?.map((item) => {
+        { commentu && commentu?.map((item) => {
           return  <CommentCard item={item} key={item.id}/>
         }) }
          
         </div>
+        </> }
     </div>
   )
 }

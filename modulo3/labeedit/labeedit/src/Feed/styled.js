@@ -180,3 +180,7 @@ line-height: 12px;
 text-align: center;
 color: #6F6F6F;
 `
+export const Loading = styled.img`
+margin-left: 25%;
+margin-top: 50%;
+`

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { GetPost } from './api'
 import { GlobalContext } from './GlobalContext'
+import { useNavigate } from 'react-router-dom';
+import { goLogin } from '../Routes/Coordinator';
  
 
 
@@ -9,6 +11,11 @@ export default function GlobalState(props) {
     const [ page, setPage ] = useState(1);
     const [ comment, setComment] = useState("");
     const [counter, setCounter] = useState(0)
+    const navigate = useNavigate()
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if(!token) { goLogin(navigate) }
+      },[]);
 
     useEffect (() => {
         const postData = async () => {

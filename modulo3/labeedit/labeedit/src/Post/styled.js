@@ -167,3 +167,7 @@ export const Ximg = styled.img`
 width: 23.93px;
 height: 23.93px;
 `
+export const Loading = styled.img`
+margin-left: 25%;
+margin-top: 50%;
+`

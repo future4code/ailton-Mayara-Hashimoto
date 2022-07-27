@@ -12,4 +12,4 @@ export const useForm = (item) => {
     return ( {
         form, onChange, clearForm
     } )
-}   
+};
