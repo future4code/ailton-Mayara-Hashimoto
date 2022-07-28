@@ -105,17 +105,16 @@ export const ChangeCVote = async (body, id) => {
 };
 export const DeleteComVote = async (id) => {
     const token = localStorage.getItem("token");
-    if (window("Tem certeza que deseja deletar o vote deste comentário?")) {
-        axios
-        .delete(`${baseUrl}/comments/${id}/votes`, 
-        {headers: {authorization: token} })
-    };
+          axios
+         .delete(`${baseUrl}/comments/${id}/votes`, 
+         {headers: {authorization: token} })
+    
 }
 export const DeleteVote = async (id) => {
     const token = localStorage.getItem("token");
-    if (window("Tem certeza que deseja deletar o vote deste post?")) {
+
         axios
         .delete(`${baseUrl}/posts/${id}/votes`, 
         {headers: {authorization: token} })
-    };
+   
 }
