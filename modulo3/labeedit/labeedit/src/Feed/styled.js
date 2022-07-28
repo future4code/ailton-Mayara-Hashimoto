@@ -3,7 +3,6 @@ import styled from "styled-components"
 export const Container = styled.div`
 display: flex;
 flex-direction: column;
-padding: 0 33px;
 `
 export const Header = styled.header`
 height: 50px;
@@ -181,6 +180,26 @@ text-align: center;
 color: #6F6F6F;
 `
 export const Loading = styled.img`
-margin-left: 25%;
-margin-top: 50%;
+margin: 0 auto;
+margin-top: 30%;
 `
+export const PNav = styled.p`
+
+`
+export const PAtual = styled.p` 
+background-image: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);
+color: #FFF;
+font-weight: bold;
+padding: 5px 7px;
+border-radius: 12px;
+`
+export const DivNav = styled.div`
+display: flex;
+justify-content: center;
+font-family: "IBM Plex Sans";
+font-size: 18px;
+margin-top: 15px;
+margin-bottom: 15px;
+gap: 10px;
+`
+

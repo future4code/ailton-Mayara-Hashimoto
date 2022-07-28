@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Header, BoxLogo, Color1, Color2, Color3, Color4, StyledP, ButtonEnter,
-         DivPost, Input, DivLine, InputTitle, Loading } from './styled'
+         DivPost, Input, DivLine, InputTitle, Loading, PNav, PAtual, DivNav, Container } from './styled'
 import { useNavigate } from 'react-router-dom'
 import { goLogin } from '../Routes/Coordinator'
 import Card from './cardFeed'
@@ -12,7 +12,7 @@ import load from '../Assets/load.gif'
 export default function Feed() {
   const navigate = useNavigate()
   const { form, onChange, clearForm } = useForm({title: "", body:""})
-  const { list, setCounter } = useContext(GlobalContext)
+  const { list, setCounter, counter, page, setPage } = useContext(GlobalContext)
     const onPost = async (event) => {
       event.preventDefault()
       await CreatePost(form)
@@ -21,7 +21,7 @@ export default function Feed() {
     }; 
 
   return (
-    <div>
+    <Container>
       
   <Header>
     <BoxLogo>
@@ -42,7 +42,30 @@ export default function Feed() {
   <DivLine></DivLine>
   { list && list.data?.map((item) => {
     return <Card item={item} key={item.id}/> }) }
+    <DivNav>
+    {page - 2 > 0 && (
+              <PNav onClick={() => setPage(page - 2)}>
+                {page - 2}
+              </PNav>
+            )}
+            {page - 1 > 0 && (
+              <PNav onClick={() => setPage(page - 1)}>
+                {page - 1}
+              </PNav>
+            )}
+            <PAtual>{page}</PAtual>
+
+              <PNav onClick={() => setPage(page + 1)}>
+                {page + 1}
+              </PNav>
+
+
+              <PNav onClick={() => setPage(page + 2)}>
+                {page + 2}
+              </PNav>
+
+    </DivNav>
     </> }
-    </div>
+    </Container>
   )
 }

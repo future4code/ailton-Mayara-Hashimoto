@@ -22,8 +22,8 @@ export default function GlobalState(props) {
             const listData = await GetPost(`posts?page=${page}&size=20`);
             setList(listData) }
         postData()
-    }, [counter])
-    const values = {list, page, setPage, comment, setComment, counter, setCounter }
+    }, [counter, page])
+    const values = {list, page, setPage, comment, setComment, counter, setCounter, page, setPage }
     const Provider = GlobalContext.Provider
   return ( 
         <Provider value={values}>{props.children}</Provider>
