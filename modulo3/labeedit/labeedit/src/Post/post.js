@@ -30,14 +30,12 @@ export default function Post() {
  }
  getComment()
   };
- }, [postContent, list]);
+ }, [postContent, list, counter, commentu]);
  
- console.log(postContent);
- console.log(commentu);
-
  const onComment = async (event) => {
   event.preventDefault()
   await CreateComment(form, params.id)
+        setCommentu("")
         clearForm()
         setCounter(counter + 1)
 }; 
@@ -55,14 +53,14 @@ export default function Post() {
   { commentu && 
     <>
       <DivPost>
-        { postContent && <Card item={postContent[0]}/> }
-        <Input name={"body"} value={form.body} onChange={onChange} placeholder='Deixe seu comentário...'/>
+        { postContent && <Card item={postContent[0]} counter={counter} setCounter={setCounter}/> }
+        <Input name={"body"} value={form.body} onChange={onChange} placeholder='Deixe seu comentário/Leave your comment'/>
         <ButtonEnter onClick={onComment}>Responder</ButtonEnter>
         <DivLine></DivLine>
         </DivPost>
         <div>
         { commentu && commentu?.map((item) => {
-          return  <CommentCard item={item} key={item.id}/>
+          return  <CommentCard item={item} key={item.id} counter={counter} setCounter={setCounter} setCommentu={setCommentu} />
         }) }
          
         </div>

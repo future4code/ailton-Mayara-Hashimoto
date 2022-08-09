@@ -116,6 +116,7 @@ export const DivImages = styled.div`
 display: flex;
 gap: 15px;
 flex-direction: row;
+
 `
 export const PostSender = styled.p`
 font-family: 'IBM Plex Sans';
@@ -151,10 +152,12 @@ color: #000000;
 export const Resize = styled.img`
 height: 13.94px;
 width: 13.94px;
+cursor: pointer;
 `
 export const ResizeComment = styled.img`
 width: 14px;
 height: 13px;
+cursor: pointer;
 `
 export const BoxVotes = styled.div`
 display: flex;
@@ -188,6 +191,7 @@ cursor: pointer;
 background-color: #A8BBC6;
 padding: 5px 7px;
 border-radius: 12px;
+cursor: pointer;
 `
 export const PAtual = styled.p` 
 background-image: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);

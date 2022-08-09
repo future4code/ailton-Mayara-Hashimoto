@@ -10,19 +10,21 @@ import { ChangePVote, DeleteVote } from '../Components/api'
 import SLike from '../Assets/seta.png'
 import DLike from '../Assets/outraseta.png'
 
-export default function Card({item}) {
+export default function Card({item, counter, setCounter}) {
     const navigate = useNavigate()
 
-    const like = (body) => {
-      ChangePVote(body, item.id)
+    const like = async (body) => {
+      await ChangePVote(body, item.id)
+      setCounter(counter + 1)
     };
-    const remove = () =>{
-      DeleteVote(item.id)
+    const remove = async () =>{
+      await DeleteVote(item.id)
+      setCounter(counter + 1)
     };
 
   return (
     <div>
-    <DivPosts onClick={() => goPost(navigate, item.id)}>
+    <DivPosts >
     <PostSender>Enviado por: {item.username}</PostSender>
     <PostText>{item.title}</PostText>
     <PostText>{item.body}</PostText>
@@ -38,9 +40,9 @@ export default function Card({item}) {
       <Resize src={Unlike} onClick={() => {like({direction : -1})}} /> }
     </BoxVotes> 
 
-      <BoxVotes>
+      <BoxVotes onClick={() => goPost(navigate, item.id)}>
         
-        <ResizeComment scr={Comment}/>
+        <ResizeComment scr={Comment} />
         <Numbers>{item.commentCount}</Numbers>
         </BoxVotes> 
     </DivImages>

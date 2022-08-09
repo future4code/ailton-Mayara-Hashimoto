@@ -17,7 +17,7 @@ export default function Feed() {
       event.preventDefault()
       await CreatePost(form)
       clearForm()
-      setCounter()
+      setCounter(counter + 1)
     }; 
 
   return (
@@ -35,13 +35,13 @@ export default function Feed() {
   { list && 
     <>
   <DivPost onSubmit={onPost}>
-    <InputTitle placeholder='Titulo' onChange={onChange} value={form.title} name={"title"} />
-    <Input placeholder='Escreva seu post...' onChange={onChange} value={form.body} name={"body"}/>
+    <InputTitle placeholder='Titulo/Tittle' onChange={onChange} value={form.title} name={"title"} />
+    <Input placeholder='Escreva seu post/Write your post' onChange={onChange} value={form.body} name={"body"}/>
     <ButtonEnter >Postar</ButtonEnter>
   </DivPost>
   <DivLine></DivLine>
   { list && list.data?.map((item) => {
-    return <Card item={item} key={item.id}/> }) }
+    return <Card item={item} key={item.id} counter={counter} setCounter={setCounter} /> }) }
     <DivNav>
     {page - 2 > 0 && (
               <PNav onClick={() => setPage(page - 2)}>

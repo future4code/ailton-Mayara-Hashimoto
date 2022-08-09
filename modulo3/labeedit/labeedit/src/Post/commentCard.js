@@ -1,19 +1,22 @@
 import React from 'react'
 import  Like  from '../Assets/like.png'
 import  Unlike  from '../Assets/unlike.png'
-import { DivImages, PostSender, PostText, DivPosts, Resize,
-         BoxVotes,  Numbers } from './styled'
+import { DivImages, PostSender, PostText, DivPosts, Resize, BoxVotes,  Numbers } from './styled'
 import { ChangeCVote, DeleteComVote } from '../Components/api'
 import SLike from '../Assets/seta.png'
 import DLike from '../Assets/outraseta.png'
          
-export default function CommentCard({item}) {
+export default function CommentCard({item, counter, setCounter, setCommentu}) {
 
-  const like = (body) => {
-    ChangeCVote(body, item.id)
+  const like = async (body) => {
+    await ChangeCVote(body, item.id)
+    setCounter(counter + 1)
+    setCommentu("")
   };
-  const remove = () =>{
-    DeleteComVote(item.id)
+  const remove = async () =>{
+   await DeleteComVote(item.id)
+    setCounter(counter + 1)
+    setCommentu("")
   };
   
   return (

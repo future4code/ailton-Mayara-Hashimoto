@@ -4,6 +4,7 @@ export const Container = styled.div`
 display: flex;
 flex-direction: column;
 padding: 0 33px;
+
 `
 export const Header = styled.header`
 height: 50px;
@@ -135,10 +136,12 @@ color: #000000;
 export const Resize = styled.img`
 height: 13.94px;
 width: 13.94px;
+cursor: pointer;
 `
 export const ResizeComment = styled.img`
 width: 14px;
 height: 13px;
+cursor: pointer;
 `
 export const BoxVotes = styled.div`
 display: flex;

@@ -27,10 +27,9 @@ export const GetComments = async (id, setData) => {
         .get(`${baseUrl}/posts/${id}/comments`, {
             headers: { authorization: token }
         })
-        console.log(res)
         setData(res.data)
     } catch (error) {
-        console.log(error)
+        alert("Algo deu errado. Tente novamente.")
     }
 };
 export const LogMeIn = async (body) => {
@@ -77,9 +76,8 @@ export const CommentVote = async (id) => {
         .post(`${baseUrl}/comments/${id}/votes`,
          { headers: {authorization: token} })
          alert("Obrigads por seu voto!")
-         console.log(res)
     } catch (error) {
-        console.log(error)
+
     }
 };
 
@@ -88,9 +86,8 @@ export const ChangePVote = async (body, id) => {
     try { const res = await axios
         .put(`${baseUrl}/posts/${id}/votes`, body,
         { headers: {authorization: token} })
-        console.log(res)
     } catch (error) {
-        console.log(error)
+
     }
 };
 export const ChangeCVote = async (body, id) => {
@@ -98,9 +95,8 @@ export const ChangeCVote = async (body, id) => {
     try { const res = await axios
         .put(`${baseUrl}/comments/${id}/votes`, body,
         { headers: {authorization: token} })
-        console.log(res)
     } catch (error) {
-        console.log(error)
+
     }
 };
 export const DeleteComVote = async (id) => {

@@ -18,6 +18,19 @@ const GlobalStyled = createGlobalStyle`
   display: flex;
   flex-direction: column;
 }
+::-webkit-scrollbar {
+  width: 10px;
+};
+::-webkit-scrollbar-track {
+  background: #F9B24E;
+};
+::-webkit-scrollbar-thumb {
+  background: #FF6489;
+};
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+};
+
 `
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
