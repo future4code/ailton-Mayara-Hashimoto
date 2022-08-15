@@ -1,0 +1,16 @@
+{
+  "name": "intro-typescript",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Intro TS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node ./build/index.js"
+  },
+  "author": "eu",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.6.5"
+  }
+}
