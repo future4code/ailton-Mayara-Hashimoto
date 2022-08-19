@@ -1,0 +1,23 @@
+{
+  "name": "lista-typescript",
+  "version": "1.0.0",
+  "description": "Projeto de fixação typescriptmkdir",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "exUm": "tsc && node ./build/exUm.js",
+    "exDois": "tsc && node ./build/exDois.js",
+    "exTres": "tsc && node ./build/exTres.js",
+    "exQuatro": "tsc && node ./build/exQuatro.js",
+    "exCinco": "tsc && node ./build/exCinco.js",
+    "exSeis": "tsc && node ./build/exSeis.js",
+    "exSete": "tsc && node ./build/exSete.js",
+    "exOito": "tsc && node ./build/exOito.js",
+    "exNove": "tsc && node ./build/exNove.js",
+    "exDez": "tsc && node ./build/exDez.js",
+    "exOnze": "tsc && node ./build/exOnze.js"
+  },
+  "keywords": [],
+  "author": "Mayara Costa",
+  "license": "ISC"
+}
