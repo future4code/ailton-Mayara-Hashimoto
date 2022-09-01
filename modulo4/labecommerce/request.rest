@@ -1,0 +1,8 @@
+
+POST http://localhost:3003/create-users
+{
+    "id": "0001",
+    "name": "Hyunjin",
+    "email": "knvknvg@naver.com",
+    "password": "lalaistapass"
+}
