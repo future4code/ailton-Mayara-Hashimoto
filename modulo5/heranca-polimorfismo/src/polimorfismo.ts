@@ -81,3 +81,9 @@ export interface Client {
     public getIndustryNumber(): string { return this.insdustryNumber; }
     public calculateBill(): number { return this.consumedEnergy * 0.45 + this.getMachinesQuantity() * 100; }
   }
+
+
+
+
+
+
