@@ -4,7 +4,6 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { AddressInfo } from "net";
 
-
 dotenv.config();
 
 export const connection = knex({
@@ -30,6 +29,7 @@ const server = app.listen(process.env.PORT || 3003, () => {
        console.error(`Failure upon starting server.`);
     }
 });
+
 
 const createUser = async (
     id:string,
@@ -171,3 +171,4 @@ app.delete("/user/:id", async (req, res) =>{
         res.status(401).send({message: err.message})
     }
 });
+
