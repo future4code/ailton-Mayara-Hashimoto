@@ -3,6 +3,7 @@ import { BaseDatabase } from "./BaseDatabase"
 
 export class UserDatabase extends BaseDatabase {
     public static TABLE_USERS = "Arq_Users"
+
     public verifyEmail = async (email:string):Promise<User|undefined> => {
         const result = await BaseDatabase.connection(UserDatabase.TABLE_USERS)
                     .select("*").where({email})
@@ -16,4 +17,6 @@ export class UserDatabase extends BaseDatabase {
                     .insert({id:user.getId(), name:user.getName(), email:user.getEmail(),
                              password:user.getPassword(), role:user.getRole()})
     }
+=======
+    
 }
