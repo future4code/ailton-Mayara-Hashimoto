@@ -1,6 +1,8 @@
 import { Router } from 'express'
-import { UserController } from '../controller/UserController'
+import { userController } from '../userDependence'
+
 
 export const userRouter = Router()
 
-const userController = new UserController()
+userRouter.post("/signup", userController.signup)
+userRouter.post("/login", userController.login)
